@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-migrations xmlns="http://doctrine-project.org/schemas/migrations/configuration"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://doctrine-project.org/schemas/migrations/configuration
+                    http://doctrine-project.org/schemas/migrations/configuration.xsd">
+
+    <name>EY-CEI Data Migrations</name>
+
+    <migrations-namespace>DbMigrations</migrations-namespace>
+
+    <table name="db_versions" />
+
+    <migrations-directory>./DbMigrations</migrations-directory>
+
+</doctrine-migrations>

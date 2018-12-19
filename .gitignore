@@ -1,0 +1,10 @@
+# Output of 'npm pack'
+*.tgz
+
+# environment variables files
+.env
+.env-bash
+*.private.env.json
+
+.git-branches
+
