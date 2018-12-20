@@ -8,6 +8,7 @@
 
 namespace App\Core;
 
+use App\Api\AuthApiView;
 use App\Factories\ResponseFactory;
 use League\Container\Container;
 use League\Route\Router;
@@ -43,6 +44,8 @@ class AppRouter
             return $response;
         })
             -> setName('api-test');
+
+        $route->post('/api/auth', AuthApiView::class)->setName('auth-route');
 
         return $route;
     }

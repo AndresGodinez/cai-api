@@ -8,6 +8,9 @@
 
 namespace App\Utils;
 
+use Firebase\JWT\JWT;
+use Firebase\JWT\SignatureInvalidException;
+
 /**
  * Class SecurityUtils
  * @package App\Utils
@@ -33,5 +36,26 @@ class SecurityUtils
     public static function verifySecurePaswFromHash(string $val, string $seed, $hash)
     {
         return \password_verify($val . '_' . $seed, $hash);
+    }
+
+    public static function encodeDataToJwt(string $secret, array $data)
+    {
+        return JWT::encode($data, $secret);
+    }
+
+    public static function decodeJwtData(string $secret, string $jwt)
+    {
+        return JWT::decode($jwt, $secret, array("HS256"));
+    }
+
+    public static function validateJwt(string $secret, string $jwt)
+    {
+        try {
+            return !!self::decodeJwtData($secret, $jwt);
+        } catch (SignatureInvalidException $e) {
+        } catch (\UnexpectedValueException $e) {
+        }
+
+        return false;
     }
 }

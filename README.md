@@ -15,8 +15,8 @@ create database `EYCei` character set utf8 collate utf8_general_ci;
 create database `test_EYCei` character set utf8 collate utf8_general_ci;
 create user `ey_cei_admin`@localhost identified by 'PSWD';
 
-grant all privileges on `EYCei`.* to `sea_pt_admin`@localhost;
-grant all privileges on `test_EYCei`.* to `sea_pt_admin`@localhost;
+grant all privileges on `EYCei`.* to `ey_cei_admin`@localhost;
+grant all privileges on `test_EYCei`.* to `ey_cei_admin`@localhost;
 flush privileges;
 ```
 

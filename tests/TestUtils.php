@@ -66,7 +66,7 @@ class TestUtils
      * @param TestCase $testInst
      * @param ResponseInterface $response
      */
-    public static function runDefaultJsonViewResponseTests(TestCase $testInst, ResponseInterface $response)
+    public static function runDefaultJsonViewResponseTests(TestCase $testInst, ResponseInterface $response, int $wantedStatusCode = Http::STATUS_CODE_HTTP_OK)
     {
         $testInst->assertNotNull($response);
         $testInst->assertInstanceOf(ResponseInterface::class, $response);
@@ -75,5 +75,13 @@ class TestUtils
 
         $contentType = $response->getHeaderLine(Http::HEADER_CONTENT_TYPE);
         $testInst->assertEquals($contentType, Http::CONTENT_TYPE_APPLICATION_JSON_UTF8, 'The response CONTENT_TYPE header is not JSON');
+
+        $testInst->assertEquals($wantedStatusCode, $response->getStatusCode());
+
+        $body = (string)$response->getBody();
+        $testInst->assertNotNull($body);
+
+        $arrayBody = \json_decode($body, JSON_OBJECT_AS_ARRAY);
+        $testInst->assertNotNull($arrayBody);
     }
 }

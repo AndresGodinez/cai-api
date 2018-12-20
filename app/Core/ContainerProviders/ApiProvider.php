@@ -8,11 +8,7 @@
 
 namespace App\Core\ContainerProviders;
 
-use App\Api\Agent\AgentGetAssignedVotingBoothsApiView;
 use App\Api\AuthApiView;
-use App\Api\Candidate\CandidateGetAllApiView;
-use App\Api\SectionsApiView;
-use App\Api\TestApiView;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 
 /**
@@ -22,11 +18,6 @@ use League\Container\ServiceProvider\AbstractServiceProvider;
 class ApiProvider extends AbstractServiceProvider
 {
     protected $provides = [
-        TestApiView::class,
-        SectionsApiView::class,
-
-        AgentGetAssignedVotingBoothsApiView::class,
-
         AuthApiView::class
     ];
 
@@ -40,21 +31,7 @@ class ApiProvider extends AbstractServiceProvider
     public function register()
     {
         $this->container
-            ->add(TestApiView::class)
-            ->addMethodCall('setConfig', ['model-config'])
-            ->addMethodCall('setEm', ['entity-manager']);
-        $this->container
-            ->add(SectionsApiView::class)
-            ->addMethodCall('setConfig', ['model-config'])
-            ->addMethodCall('setEm', ['entity-manager']);
-
-        $this->container
             ->add(AuthApiView::class)
-            ->addMethodCall('setConfig', ['model-config'])
-            ->addMethodCall('setEm', ['entity-manager']);
-
-        $this->container
-            ->add(CandidateGetAllApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
     }
