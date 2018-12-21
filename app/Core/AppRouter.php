@@ -9,8 +9,11 @@
 namespace App\Core;
 
 use App\Api\AuthApiView;
+use App\Api\User\UserDataApiView;
+use App\Core\Middlewares\SecureApiMiddleware;
 use App\Factories\ResponseFactory;
 use League\Container\Container;
+use League\Route\RouteGroup;
 use League\Route\Router;
 use League\Route\Strategy\ApplicationStrategy;
 use Psr\Http\Message\ResponseInterface;
@@ -27,6 +30,10 @@ class AppRouter
      */
     public function __invoke(Container $container)
     {
+        /** @var array $config */
+        $config = $container->get('array-config');
+        $secureApiMiddleware = new SecureApiMiddleware($config);
+
         $strategy = new ApplicationStrategy();
         $strategy -> setContainer($container);
 
@@ -46,6 +53,10 @@ class AppRouter
             -> setName('api-test');
 
         $route->post('/api/auth', AuthApiView::class)->setName('auth-route');
+
+        $r = $route->get('/api/user/{regId:regId}/data', UserDataApiView::class);
+        $r->setName('user-data-route');
+        $r->middleware($secureApiMiddleware);
 
         return $route;
     }

@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `s10_brands` (
   `reg_updated_dt` DATETIME NULL,
   `reg_status` TINYINT(4) NOT NULL DEFAULT 1 COMMENT '0 => INACTIVE\n1 => ACTIVE',
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `brands_uidx_code` (`code` ASC),
+  UNIQUE INDEX `brands_uidx_code_line_id` (`line_id` ASC, `code` ASC),
   INDEX `brands_idx_line_id` (`line_id` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8

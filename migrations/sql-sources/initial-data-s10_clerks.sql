@@ -1,0 +1,18 @@
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (1, 'PENDIENTE', '1', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (2, 'PENDIENTE', '2', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (3, 'Imanol Humberto Ramírez López', '3', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (4, 'Juan Carlos Pérez Escobar', '4', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (5, 'German Moreno Mendieta', '5', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (6, 'PENDIENTE', '6', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (7, 'PENDIENTE', '7', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (8, 'Dhey Gallardo Sanchez', '8', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (9, 'Yhael Chona Sarmina', '9', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (10, 'Miriam Amyra Cervantes Nacif', '10', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (11, 'Oscar Lopez Zerafino', '11', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (12, 'Abel Alejandro Esparza Venegas', '12', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (13, 'Andrea Monserrat Rosales Flores', '13', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (14, 'Julieta Dueñas Porras', '14', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (15, 'Ulises Sepulveda Aldana', '15', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (16, 'Leopoldo Agustín Alvarez Guillen', '16', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (17, 'Jesús Manuel Lopez Correa', '17', null, null, 1);
+INSERT INTO s10_clerks (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (18, 'DESCONOCIDO', '25', null, null, 1);

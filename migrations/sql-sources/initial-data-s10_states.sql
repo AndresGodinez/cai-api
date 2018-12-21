@@ -1,0 +1,17 @@
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (1, 'AGUASCALIENTES', '1', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (2, 'BAJA CALIFORNIA NORTE', '2', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (3, 'BAJA CALIFORNIA SUR', '3', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (4, 'CHIAPAS', '5', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (5, 'DISTRITO FEDERAL', '7', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (6, 'ESTADO DE MEXICO', '11', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (7, 'GUANAJUATO', '12', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (8, 'GUERRERO', '13', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (9, 'HIDALGO', '14', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (10, 'MORELOS', '17', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (11, 'NAYARIT', '18', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (12, 'PUEBLA', '21', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (13, 'QUERETARO', '22', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (14, 'SINALOA', '25', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (15, 'TABASCO', '27', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (16, 'TLAXCALA', '29', null, null, 1);
+INSERT INTO s10_states (id, name, code, reg_created_dt, reg_updated_dt, reg_status) VALUES (17, 'ZACATECAS', '32', null, null, 1);

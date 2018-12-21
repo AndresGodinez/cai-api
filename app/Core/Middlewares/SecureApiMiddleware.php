@@ -8,17 +8,20 @@
 
 namespace App\Core\Middlewares;
 
+use App\Consts\Http;
 use App\Exceptions\ApiSecurityException;
 use App\Utils\RequestUtils;
+use App\Utils\SecurityUtils;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
 /**
  * Class SecureApiMiddleware
  * @package App\Core\Middlewares
  */
-class SecureApiMiddleware
+class SecureApiMiddleware implements MiddlewareInterface
 {
     /** @var array $config */
     protected $config = null;
@@ -33,28 +36,49 @@ class SecureApiMiddleware
     }
 
     /**
-     * @param ServerRequestInterface $request
-     * @param RequestHandlerInterface $handler
-     * @return mixed
+     * Process an incoming server request.
+     *
+     * Processes an incoming server request in order to produce a response.
+     * If unable to produce the response itself, it may delegate to the provided
+     * request handler to do so.
      * @throws ApiSecurityException
      */
-    public function __invoke(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $jwt = RequestUtils::getJwtTokenFromAuthorizationHeader($request);
+        if (!$request->hasHeader(Http::HEADER_AUTHORIZATION)) {
+            $response = \App\Factories\ResponseFactory::buildUnauthorizedJsonResponse();
+            $response->getBody()->write(\json_encode(['msg' => 'Unauthorized request 1']));
+            return $response;
+        }
+
+        $authorizationHeader = $request->getHeaderLine(Http::HEADER_AUTHORIZATION);
+
+        if (!$authorizationHeader) {
+            $response = \App\Factories\ResponseFactory::buildUnauthorizedJsonResponse();
+            $response->getBody()->write(\json_encode(['msg' => 'Unauthorized request 2']));
+            return $response;
+        }
+
+        list($jwt) = \sscanf($authorizationHeader, 'Bearer %s');
 
         if (!$jwt) {
-            throw new ApiSecurityException('Unauthorized request');
+            $response = \App\Factories\ResponseFactory::buildUnauthorizedJsonResponse();
+            $response->getBody()->write(\json_encode(['msg' => 'Unauthorized request 3']));
+            return $response;
         }
 
         // define authorization process (token based or preferred)
-        $valid = true;
-        if (!$valid) {
-            throw new ApiSecurityException('Invalid token');
+        $secret = $this->config['APP_JWT_SECRET'] ?? '';
+        if (!SecurityUtils::validateJwt($secret, $jwt)) {
+            $response = \App\Factories\ResponseFactory::buildUnauthorizedJsonResponse();
+            $response->getBody()->write(\json_encode(['msg' => 'Invalid token']));
+            return $response;
         }
 
         // set authentication result data, or jwt specific data
-        $authData = [];
-        $request = $request->withAttribute('authData', $authData);
+        $authData = SecurityUtils::decodeJwtData($secret, $jwt);
+
+        $request = $request->withAttribute('authData', (array)$authData);
 
         return $handler->handle($request);
     }

@@ -42,7 +42,7 @@ class BrandMapping
 
         ClassMetadataUtils::poblateMetadataWithBaseEntityFields($builder);
 
-        $builder->addUniqueConstraint(['code'], 'brands_uidx_code');
+        $builder->addUniqueConstraint(['code', 'line_id'], 'brands_uidx_code_line_id');
         $builder->addIndex(['line_id'], 'brands_idx_line_id');
     }
 }

@@ -11,6 +11,7 @@ namespace App\Core;
 use App\Core\ContainerProviders\ApiProvider;
 use App\Core\ContainerProviders\BaseProvider;
 use App\Core\ContainerProviders\ModelsProvider;
+use App\Core\ContainerProviders\UserApiProvider;
 use League\Container\Container;
 
 /**
@@ -33,6 +34,8 @@ class AppContainer
         $container->addServiceProvider(new ModelsProvider);
 
         $container->addServiceProvider(new ApiProvider);
+
+        $container->addServiceProvider(new UserApiProvider);
 
         return $container;
     }

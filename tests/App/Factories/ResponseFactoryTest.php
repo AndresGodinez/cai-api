@@ -55,4 +55,22 @@ class ResponseFactoryTest extends TestCase
         $this->assertEquals(Http::CONTENT_TYPE_APPLICATION_JSON_UTF8, $r->getHeaderLine(Http::HEADER_CONTENT_TYPE));
         $this->assertEquals(Http::STATUS_CODE_HTTP_BAD_REQUEST, $r->getStatusCode());
     }
+
+    /**
+     * Tests the static function ResponseFactory::buildUnauthorizedJsonResponse that musts return a valid ResponseInterface
+     * with default content-type json header and a unauthorized http status code
+     */
+    public function testBuildUnauthorizedJsonResponse()
+    {
+
+        $r = ResponseFactory::buildUnauthorizedJsonResponse();
+
+        $this->assertNotNull($r);
+        $this->assertInstanceOf(ResponseInterface::class, $r);
+
+        $this->assertTrue($r->hasHeader(Http::HEADER_CONTENT_TYPE));
+
+        $this->assertEquals(Http::CONTENT_TYPE_APPLICATION_JSON_UTF8, $r->getHeaderLine(Http::HEADER_CONTENT_TYPE));
+        $this->assertEquals(Http::STATUS_CODE_HTTP_UNAUTHORIZED, $r->getStatusCode());
+    }
 }

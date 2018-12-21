@@ -30,4 +30,12 @@ class ResponseFactory
 
         return $response;
     }
+
+    public static function buildUnauthorizedJsonResponse()
+    {
+        $response = (new Response)->withStatus(Http::STATUS_CODE_HTTP_UNAUTHORIZED);
+        ResponseUtils::addContentTypeJsonHeader($response);
+
+        return $response;
+    }
 }

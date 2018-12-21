@@ -193,7 +193,7 @@ class BrandEntityTest extends DbUnitTestCase
         $em->flush();
     }
 
-    public function testErrorNonUniqueCode()
+    public function testErrorNonUniqueCodeOnLine()
     {
         $this->expectException(UniqueConstraintViolationException::class);
 
@@ -222,7 +222,7 @@ class BrandEntityTest extends DbUnitTestCase
         $em->flush();
     }
 
-    public function testErrorDifferentBrandsOnSameLine()
+    public function testSaveSuccessfullyDifferentBrandsOnSameLine()
     {
         /** @var EntityManager $em */
         $em = self::$container->get('test-entity-manager');
@@ -274,6 +274,69 @@ class BrandEntityTest extends DbUnitTestCase
                 'name' => $name,
                 'code' => $code2,
                 'line_id' => $line->getId(),
+                'reg_created_dt' => null,
+                'reg_updated_dt' => null,
+                'reg_status' => DefaultEntityRegStatus::ACTIVE,
+            ],
+            $testTable
+        );
+    }
+
+    public function testSaveSuccessfullyDifferentBrandsSameCodeOnDifferentLine()
+    {
+        /** @var EntityManager $em */
+        $em = self::$container->get('test-entity-manager');
+
+        $name = 'TEST';
+        $code = 'TEST1';
+
+        $line1 = new Line();
+        $line1->setName('TEST');
+        $line1->setCode('TEST1');
+
+        $line2 = new Line();
+        $line2->setName('TEST');
+        $line2->setCode('TEST2');
+
+        $register1 = new Brand();
+        $register1->setName($name);
+        $register1->setCode($code);
+        $register1->setLine($line1);
+
+        $register2 = new Brand();
+        $register2->setName($name);
+        $register2->setCode($code);
+        $register2->setLine($line2);
+
+        $em->persist($register1);
+        $em->persist($register2);
+        $em->flush();
+
+        $this->assertTableRowCount('s10_lines', 2);
+        $this->assertTableRowCount('s10_brands', 2);
+
+        /** @var Connection $conn */
+        $conn = $this->getConnection();
+
+        $testTable = $conn->createQueryTable('test_table', "SELECT * FROM s10_brands");
+        $this->assertTableContains(
+            [
+                'id' => $register1->getId(),
+                'name' => $name,
+                'code' => $code,
+                'line_id' => $line1->getId(),
+                'reg_created_dt' => null,
+                'reg_updated_dt' => null,
+                'reg_status' => DefaultEntityRegStatus::ACTIVE,
+            ],
+            $testTable
+        );
+        $this->assertTableContains(
+            [
+                'id' => $register2->getId(),
+                'name' => $name,
+                'code' => $code,
+                'line_id' => $line2->getId(),
                 'reg_created_dt' => null,
                 'reg_updated_dt' => null,
                 'reg_status' => DefaultEntityRegStatus::ACTIVE,
