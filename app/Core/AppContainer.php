@@ -10,6 +10,8 @@ namespace App\Core;
 
 use App\Core\ContainerProviders\ApiProvider;
 use App\Core\ContainerProviders\BaseProvider;
+use App\Core\ContainerProviders\BrandApiProvider;
+use App\Core\ContainerProviders\FurnitureTypeApiProvider;
 use App\Core\ContainerProviders\ModelsProvider;
 use App\Core\ContainerProviders\UserApiProvider;
 use League\Container\Container;
@@ -36,6 +38,10 @@ class AppContainer
         $container->addServiceProvider(new ApiProvider);
 
         $container->addServiceProvider(new UserApiProvider);
+
+        $container->addServiceProvider(new BrandApiProvider);
+
+        $container->addServiceProvider(new FurnitureTypeApiProvider);
 
         return $container;
     }

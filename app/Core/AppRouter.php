@@ -9,11 +9,12 @@
 namespace App\Core;
 
 use App\Api\AuthApiView;
+use App\Api\Brand\BrandListApiView;
+use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\User\UserDataApiView;
 use App\Core\Middlewares\SecureApiMiddleware;
 use App\Factories\ResponseFactory;
 use League\Container\Container;
-use League\Route\RouteGroup;
 use League\Route\Router;
 use League\Route\Strategy\ApplicationStrategy;
 use Psr\Http\Message\ResponseInterface;
@@ -56,6 +57,14 @@ class AppRouter
 
         $r = $route->get('/api/user/{regId:regId}/data', UserDataApiView::class);
         $r->setName('user-data-route');
+        $r->middleware($secureApiMiddleware);
+
+        $r = $route->get('/api/brand/list', BrandListApiView::class);
+        $r->setName('brand-list-route');
+        $r->middleware($secureApiMiddleware);
+
+        $r = $route->get('/api/furniture-type/list', FurnitureTypeListApiView::class);
+        $r->setName('furniture-type-list-route');
         $r->middleware($secureApiMiddleware);
 
         return $route;

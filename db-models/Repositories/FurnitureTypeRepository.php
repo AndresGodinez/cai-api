@@ -8,6 +8,7 @@
 
 namespace DbModels\Repositories;
 
+use DbModels\Consts\DefaultEntityRegStatus;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -16,4 +17,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class FurnitureTypeRepository extends EntityRepository
 {
+    /**
+     * @return array
+     */
+    public function getValidRegisters()
+    {
+        return $this->findBy(['regStatus' => DefaultEntityRegStatus::ACTIVE]);
+    }
+
 }
