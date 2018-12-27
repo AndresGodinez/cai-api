@@ -11,6 +11,7 @@ namespace App\Core;
 use App\Api\AuthApiView;
 use App\Api\Brand\BrandListApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
+use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\User\UserDataApiView;
 use App\Core\Middlewares\SecureApiMiddleware;
 use App\Factories\ResponseFactory;
@@ -65,6 +66,10 @@ class AppRouter
 
         $r = $route->get('/api/furniture-type/list', FurnitureTypeListApiView::class);
         $r->setName('furniture-type-list-route');
+        $r->middleware($secureApiMiddleware);
+
+        $r = $route->post('/api/inventory-evidence', InventoryEvidenceCreateApiView::class);
+        $r->setName('inventory-evidence-create-route');
         $r->middleware($secureApiMiddleware);
 
         return $route;

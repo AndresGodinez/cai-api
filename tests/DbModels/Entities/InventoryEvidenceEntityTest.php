@@ -63,6 +63,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
         $em = self::$container->get('test-entity-manager');
 
         $code = 'TEST';
+        $comments = 'TEST';
         $now = new \DateTime();
 
         $state = new State();
@@ -100,6 +101,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
 
         $register = new InventoryEvidence();
         $register->setCode($code);
+        $register->setComments($comments);
         $register->setStore($store);
         $register->setBrand($brand);
         $register->setClerk($clerk);
@@ -129,6 +131,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
             [
                 'id' => $user->getId(),
                 'code' => $code,
+                'comments' => $comments,
                 'store_id' => $store->getId(),
                 'brand_id' => $brand->getId(),
                 'furniture_type_id' => $furnitureType->getId(),
@@ -148,6 +151,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
         $em = self::$container->get('test-entity-manager');
 
         $code = 'TEST';
+        $comments = 'TEST';
         $now = new \DateTime();
 
         $state = new State();
@@ -189,6 +193,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
 
         $register = new InventoryEvidence();
         $register->setCode($code);
+        $register->setComments($code);
         $register->setStore($store);
         $register->setBrand($brand);
         $register->setClerk($clerk);
@@ -221,6 +226,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
             [
                 'id' => $user->getId(),
                 'code' => $code,
+                'comments' => $comments,
                 'store_id' => $store->getId(),
                 'brand_id' => $brand->getId(),
                 'furniture_type_id' => $furnitureType->getId(),
@@ -303,6 +309,7 @@ class InventoryEvidenceEntityTest extends DbUnitTestCase
             [
                 'id' => $user->getId(),
                 'code' => $code,
+                'comments' => null,
                 'store_id' => $store->getId(),
                 'brand_id' => $brand->getId(),
                 'furniture_type_id' => $furnitureType->getId(),

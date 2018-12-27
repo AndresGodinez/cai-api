@@ -33,6 +33,9 @@ class InventoryEvidence
     /** @var string */
     protected $code;
 
+    /** @var null|string */
+    protected $comments;
+
     /** @var Store */
     protected $store;
 
@@ -104,6 +107,22 @@ class InventoryEvidence
     public function setCode(string $code): void
     {
         $this->code = $code;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getComments(): ?string
+    {
+        return $this->comments;
+    }
+
+    /**
+     * @param null|string $comments
+     */
+    public function setComments(?string $comments): void
+    {
+        $this->comments = $comments;
     }
 
     /**

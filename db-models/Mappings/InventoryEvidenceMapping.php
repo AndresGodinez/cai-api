@@ -39,6 +39,7 @@ class InventoryEvidenceMapping
         $builder->createField('id', 'bigint')->makePrimaryKey()->generatedValue()->build();
 
         $builder->createField('code', 'string')->length(255)->build();
+        $builder->createField('comments', 'string')->nullable()->build();
 
         $builder->createManyToOne('store', Store::class)
             ->addJoinColumn('store_id', 'id')
