@@ -12,6 +12,7 @@ use App\Consts\Http;
 use App\Core\AppContainer;
 use App\Utils\SecurityUtils;
 use DbModels\Consts\DefaultEntityRegStatus;
+use DbModels\Consts\InventoryEvidencePhotoType;
 use League\Route\Router;
 use PHPUnit\DbUnit\Database\Connection;
 use PHPUnit\DbUnit\DataSet\IDataSet;
@@ -20,6 +21,8 @@ use Psr\Http\Message\ResponseInterface;
 use Tests\ConfigurableConnectionTestTrait;
 use Tests\DbUnitTestCase;
 use Tests\TestUtils;
+use Zend\Diactoros\Stream;
+use Zend\Diactoros\UploadedFile;
 
 /**
  * Class InventoryEvidenceCreateApiViewTest
@@ -68,8 +71,21 @@ class InventoryEvidenceCreateApiViewTest extends DbUnitTestCase
             'clerkId' => $clerkId,
         ];
 
+        $photoFurnitureStream = new Stream(BASE_DIR . "/tests/files-resources/furniture-test-001.jpeg", 'r');
+        $photoFurnitureStreamSize = $photoFurnitureStream->getSize();
+
+        $photoQrcodeStream = new Stream(BASE_DIR . "/tests/files-resources/qrcode-test-001.jpeg", 'r');
+        $photoQrcodeStreamSize = $photoQrcodeStream->getSize();
+
+        $photoFurniture = new UploadedFile($photoFurnitureStream, $photoFurnitureStreamSize, 0, "furniture-test-001.jpeg", "image/jpeg");
+        $photoQrcode = new UploadedFile($photoQrcodeStream, $photoQrcodeStreamSize, 0, "qrcode-test-001.jpeg", "image/jpeg");
+
         $request = TestUtils::makeServerRequestMock('POST', '/api/inventory-evidence', [], $bodyData);
         $request = $request->withHeader(Http::HEADER_AUTHORIZATION, 'Bearer ' . $jwt);
+        $request = $request->withUploadedFiles([
+            'photo-furniture' => $photoFurniture,
+            'photo-qrcode' => $photoQrcode,
+        ]);
 
         /** @var ResponseInterface $response */
         $response = $router->dispatch($request);
@@ -86,6 +102,7 @@ class InventoryEvidenceCreateApiViewTest extends DbUnitTestCase
 
         // check db registers
         $this->assertTableRowCount('s30_inventory_evidences', 1);
+        $this->assertTableRowCount('s30_inventory_evidence_photos', 2);
 
         /** @var Connection $conn */
         $conn = $this->getConnection();
@@ -105,6 +122,23 @@ class InventoryEvidenceCreateApiViewTest extends DbUnitTestCase
                 'reg_status' => DefaultEntityRegStatus::ACTIVE,
             ],
             $testTable
+        );
+
+        $testTablePhotos = $conn->createQueryTable('testTablePhotos', 'select a.type, a.inventory_evidence_id from s30_inventory_evidence_photos a');
+
+        $this->assertTableContains(
+            [
+                'type' => InventoryEvidencePhotoType::FURNITURE,
+                'inventory_evidence_id' => (int)$arrayBody['id'],
+            ],
+            $testTablePhotos
+        );
+        $this->assertTableContains(
+            [
+                'type' => InventoryEvidencePhotoType::QR,
+                'inventory_evidence_id' => (int)$arrayBody['id'],
+            ],
+            $testTablePhotos
         );
     }
 
