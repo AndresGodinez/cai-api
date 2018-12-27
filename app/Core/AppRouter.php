@@ -12,6 +12,7 @@ use App\Api\AuthApiView;
 use App\Api\Brand\BrandListApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
+use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
 use App\Api\User\UserDataApiView;
 use App\Core\Middlewares\SecureApiMiddleware;
 use App\Factories\ResponseFactory;
@@ -70,6 +71,10 @@ class AppRouter
 
         $r = $route->post('/api/inventory-evidence', InventoryEvidenceCreateApiView::class);
         $r->setName('inventory-evidence-create-route');
+        $r->middleware($secureApiMiddleware);
+
+        $r = $route->get('/api/inventory-evidence', InventoryEvidenceReadRegistersApiView::class);
+        $r->setName('inventory-evidence-read-registers-route');
         $r->middleware($secureApiMiddleware);
 
         return $route;

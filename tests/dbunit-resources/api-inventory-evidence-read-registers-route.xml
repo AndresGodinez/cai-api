@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="test_EYCei">
+	<table_structure name="db_versions">
+		<field Field="version" Type="varchar(255)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="db_versions" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="version" Collation="A" Cardinality="9" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="db_versions" Engine="InnoDB" Version="10" Row_format="Compact" Rows="9" Avg_row_length="1820" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2018-12-20 01:53:44" Collation="utf8_unicode_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="db_versions">
+	<row>
+		<field name="version">20181220014633</field>
+	</row>
+	<row>
+		<field name="version">20181221185900</field>
+	</row>
+	<row>
+		<field name="version">20181221190201</field>
+	</row>
+	<row>
+		<field name="version">20181221190350</field>
+	</row>
+	<row>
+		<field name="version">20181221190601</field>
+	</row>
+	<row>
+		<field name="version">20181221190654</field>
+	</row>
+	<row>
+		<field name="version">20181221191020</field>
+	</row>
+	<row>
+		<field name="version">20181221191227</field>
+	</row>
+	<row>
+		<field name="version">20181221191358</field>
+	</row>
+	</table_data>
+	<table_structure name="s00_users">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="username" Type="varchar(100)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="pswd" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="type" Type="tinyint(4)" Null="NO" Key="" Default="0" Extra="" Comment="0 =&gt; UNKNOWN
+1 =&gt; ADMIN
+2 =&gt; CLERK" />
+		<field Field="clerk_id" Type="bigint(20)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s00_users" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s00_users" Non_unique="1" Key_name="users_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="2" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s00_users" Engine="InnoDB" Version="10" Row_format="Compact" Rows="2" Avg_row_length="8192" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="3" Create_time="2018-12-27 17:49:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s00_users">
+	<row>
+		<field name="id">1</field>
+		<field name="name">Administrador</field>
+		<field name="username">admin</field>
+		<field name="pswd">$2y$10$u5EM4qpeIYoX3MWPGSiI3uGy4fjSFI5NuNff8MxunEOGDEuu3j1Du</field>
+		<field name="type">1</field>
+		<field name="clerk_id" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">Imanol Humberto Ramírez López</field>
+		<field name="username">test</field>
+		<field name="pswd">$2y$10$u5EM4qpeIYoX3MWPGSiI3uGy4fjSFI5NuNff8MxunEOGDEuu3j1Du</field>
+		<field name="type">2</field>
+		<field name="clerk_id">3</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_brands">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="line_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_brands" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="2" Column_name="code" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_brands" Non_unique="1" Key_name="brands_idx_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_brands">
+	<row>
+		<field name="id">1</field>
+		<field name="name">TEST</field>
+		<field name="code">TEST</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_chain_stores">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_chain_stores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_chain_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_chain_stores">
+	<row>
+		<field name="id">1</field>
+		<field name="name">TEST</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_clerks">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="18" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_clerks" Non_unique="0" Key_name="clerks_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="18" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="18" Avg_row_length="910" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="19" Create_time="2018-12-27 17:49:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_clerks">
+	<row>
+		<field name="id">1</field>
+		<field name="name">PENDIENTE</field>
+		<field name="code">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">PENDIENTE</field>
+		<field name="code">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">Imanol Humberto Ramírez López</field>
+		<field name="code">3</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="name">Juan Carlos Pérez Escobar</field>
+		<field name="code">4</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="name">German Moreno Mendieta</field>
+		<field name="code">5</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="name">PENDIENTE</field>
+		<field name="code">6</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="name">PENDIENTE</field>
+		<field name="code">7</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="name">Dhey Gallardo Sanchez</field>
+		<field name="code">8</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="name">Yhael Chona Sarmina</field>
+		<field name="code">9</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="name">Miriam Amyra Cervantes Nacif</field>
+		<field name="code">10</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="name">Oscar Lopez Zerafino</field>
+		<field name="code">11</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="name">Abel Alejandro Esparza Venegas</field>
+		<field name="code">12</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="name">Andrea Monserrat Rosales Flores</field>
+		<field name="code">13</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="name">Julieta Dueñas Porras</field>
+		<field name="code">14</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="name">Ulises Sepulveda Aldana</field>
+		<field name="code">15</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="name">Leopoldo Agustín Alvarez Guillen</field>
+		<field name="code">16</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="name">Jesús Manuel Lopez Correa</field>
+		<field name="code">17</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="name">DESCONOCIDO</field>
+		<field name="code">25</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_furniture_types">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="description" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_furniture_types">
+	<row>
+		<field name="id">1</field>
+		<field name="name">TEST</field>
+		<field name="description">TEST</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_lines">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_lines" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_lines" Non_unique="0" Key_name="lines_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_lines" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_lines">
+	<row>
+		<field name="id">1</field>
+		<field name="name">TEST</field>
+		<field name="code">TEST</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_states">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_states" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_states" Non_unique="0" Key_name="states_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_states" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_states">
+	<row>
+		<field name="id">1</field>
+		<field name="name">TEST</field>
+		<field name="code">TEST</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_stores">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="city_name" Type="varchar(255)" Null="NO" Key="MUL" Default="" Extra="" Comment="" />
+		<field Field="address" Type="text" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="postal_code" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="schedule" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="type" Type="varchar(50)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<field Field="state_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="chain_store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_stores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_type" Seq_in_index="1" Column_name="type" Collation="A" Cardinality="1" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_state_id" Seq_in_index="1" Column_name="state_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_chain_store_id" Seq_in_index="1" Column_name="chain_store_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_city_name" Seq_in_index="1" Column_name="city_name" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="65536" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_stores">
+	<row>
+		<field name="id">1</field>
+		<field name="name">TEST</field>
+		<field name="city_name">TEST</field>
+		<field name="address">TEST</field>
+		<field name="postal_code">TEST</field>
+		<field name="schedule">TEST</field>
+		<field name="type">TEST</field>
+		<field name="state_id">1</field>
+		<field name="chain_store_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s20_stores_brands">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="brand_id" Type="bigint(20)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="s20_stores_brands" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="2" Column_name="brand_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s20_stores_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s20_stores_brands">
+	<row>
+		<field name="id">1</field>
+		<field name="store_id">1</field>
+		<field name="brand_id">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s20_stores_clerks">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="clerk_id" Type="bigint(20)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="s20_stores_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="2" Column_name="clerk_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s20_stores_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s20_stores_clerks">
+	<row>
+		<field name="id">1</field>
+		<field name="store_id">1</field>
+		<field name="clerk_id">3</field>
+	</row>
+	</table_data>
+	<table_structure name="s30_inventory_evidence_photos">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="file_path" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="type" Type="tinyint(4)" Null="NO" Key="" Extra="" Comment="0 =&gt; UNKNOWN
+1 =&gt; FURNITURE
+2 =&gt; QR" />
+		<field Field="inventory_evidence_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="2" Column_name="type" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="1" Key_name="iep_idx_inventory_evidence_id" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s30_inventory_evidence_photos" Engine="InnoDB" Version="10" Row_format="Compact" Rows="2" Avg_row_length="8192" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="3" Create_time="2018-12-27 17:49:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s30_inventory_evidence_photos">
+	<row>
+		<field name="id">1</field>
+		<field name="file_path">5c2552d24802e/furniture-photo-20181227-223146.jpeg</field>
+		<field name="type">1</field>
+		<field name="inventory_evidence_id">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="file_path">5c2552d24802e/qrcode-photo-20181227-223146.jpeg</field>
+		<field name="type">2</field>
+		<field name="inventory_evidence_id">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s30_inventory_evidences">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="code" Type="varchar(255)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="brand_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="furniture_type_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="clerk_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="user_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<field Field="comments" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="0" Key_name="ie_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_store_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_brand_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_furniture_type_id" Seq_in_index="1" Column_name="furniture_type_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_user_id" Seq_in_index="1" Column_name="user_id" Collation="A" Cardinality="1" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s30_inventory_evidences" Engine="InnoDB" Version="10" Row_format="Compact" Rows="1" Avg_row_length="16384" Data_length="16384" Max_data_length="0" Index_length="98304" Data_free="0" Auto_increment="2" Create_time="2018-12-27 17:49:09" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s30_inventory_evidences">
+	<row>
+		<field name="id">1</field>
+		<field name="code">TEST</field>
+		<field name="store_id">1</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">1</field>
+		<field name="clerk_id">3</field>
+		<field name="user_id">2</field>
+		<field name="reg_created_dt">2018-12-27 22:31:46</field>
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+		<field name="comments">TEST</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

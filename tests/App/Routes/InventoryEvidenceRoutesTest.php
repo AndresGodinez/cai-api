@@ -37,4 +37,18 @@ class InventoryEvidenceRoutesTest extends TestCase
         $this->assertEquals('/api/inventory-evidence', $route->getPath());
         $this->assertEquals('POST', $route->getMethod());
     }
+
+    public function testAppRouterContainsReadRegistersRoute()
+    {
+        $container = AppContainer::make(BASE_DIR);
+
+        /** @var Router $inst */
+        $inst = $container->get('router');
+
+        $route = $inst->getNamedRoute('inventory-evidence-read-registers-route');
+
+        $this->assertNotNull($route);
+        $this->assertEquals('/api/inventory-evidence', $route->getPath());
+        $this->assertEquals('GET', $route->getMethod());
+    }
 }

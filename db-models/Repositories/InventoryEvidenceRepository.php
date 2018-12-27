@@ -8,6 +8,7 @@
 
 namespace DbModels\Repositories;
 
+use DbModels\Consts\DefaultEntityRegStatus;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -16,4 +17,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class InventoryEvidenceRepository extends EntityRepository
 {
+    /**
+     * @param int $userId
+     * @return array
+     */
+    public function getValidRegistersFromUserId(int $userId)
+    {
+        return $this->findBy(['user' => $userId, 'regStatus' => DefaultEntityRegStatus::ACTIVE]);
+    }
 }
