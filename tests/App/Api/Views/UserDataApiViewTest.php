@@ -65,10 +65,12 @@ class UserDataApiViewTest extends DbUnitTestCase
 
         $this->assertInternalType('int', $arrayBody['id']);
         $this->assertInternalType('string', $arrayBody['name']);
+        $this->assertInternalType('int', $arrayBody['clerkId']);
         $this->assertInternalType('array', $arrayBody['states']);
 
         $this->assertEquals(2, $arrayBody['id']);
         $this->assertEquals('Imanol Humberto Ramírez López', $arrayBody['name']);
+        $this->assertEquals(3, $arrayBody['clerkId']);
         $this->assertEquals(1, \count($arrayBody['states']));
 
         $state = $arrayBody['states'][0];

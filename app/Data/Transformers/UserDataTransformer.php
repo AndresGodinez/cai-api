@@ -25,10 +25,12 @@ class UserDataTransformer extends TransformerAbstract
     {
         $user = $item->getUser();
         $states = $item->getStatesData();
+        $clerkId = !!$user->getClerk() ? $user->getClerk()->getId() : 0;
 
         return [
             'id' => $user->getId(),
             'name' => $user->getName(),
+            'clerkId' => $clerkId,
             'states' => $states,
         ];
     }

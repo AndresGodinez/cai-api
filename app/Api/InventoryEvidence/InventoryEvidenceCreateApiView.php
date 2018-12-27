@@ -74,14 +74,14 @@ class InventoryEvidenceCreateApiView
                 throw new ValidationException("El usuario es inválido");
             }
 
-//            if (!$uploadedFiles) {
-//                throw new ValidationException("Las fotos/imágenes del inventario son inválidas");
-//            }
-//
-//            if (!\array_key_exists('photo-furniture', $uploadedFiles)) {
-//                throw new ValidationException("La foto/imagen del mueble es inválida");
-//            }
-//
+            if (!$uploadedFiles) {
+                throw new ValidationException("Las fotos/imágenes del inventario son inválidas");
+            }
+
+            if (!\array_key_exists('photo-furniture', $uploadedFiles)) {
+                throw new ValidationException("La foto/imagen del mueble es inválida");
+            }
+
 //            if (!\array_key_exists('photo-qrcode', $uploadedFiles)) {
 //                throw new ValidationException("La foto/imagen del código QR es inválida");
 //            }
@@ -96,23 +96,23 @@ class InventoryEvidenceCreateApiView
         }
 
         // create photos registers
-//        $dirName = \uniqid();
-//        $nowStr = $now->format('Ymd-His');
-//
-//        /** @var UploadedFileInterface $furnitureFile */
-//        $furnitureFile = $uploadedFiles['photo-furniture'];
-//        $furnitureFileExt = \pathinfo($furnitureFile->getClientFilename(), PATHINFO_EXTENSION);
-//        $furnitureFileNewFile = $dirName . '/furniture-photo-' . $nowStr . '.' . $furnitureFileExt;
-//
+        $dirName = \uniqid();
+        $nowStr = $now->format('Ymd-His');
+
+        /** @var UploadedFileInterface $furnitureFile */
+        $furnitureFile = $uploadedFiles['photo-furniture'];
+        $furnitureFileExt = \pathinfo($furnitureFile->getClientFilename(), PATHINFO_EXTENSION);
+        $furnitureFileNewFile = $dirName . '/furniture-photo-' . $nowStr . '.' . $furnitureFileExt;
+
 //        /** @var UploadedFileInterface $qrcodeFile */
 //        $qrcodeFile = $uploadedFiles['photo-qrcode'];
 //        $qrcodeFileExt = \pathinfo($qrcodeFile->getClientFilename(), PATHINFO_EXTENSION);
 //        $qrcodeFileNewFile = $dirName . '/qrcode-photo-' . $nowStr . '.' . $qrcodeFileExt;
-//
-//        $photo1 = new InventoryEvidencePhoto();
-//        $photo1->setFilePath($furnitureFileNewFile);
-//        $photo1->setType(InventoryEvidencePhotoType::FURNITURE);
-//
+
+        $photo1 = new InventoryEvidencePhoto();
+        $photo1->setFilePath($furnitureFileNewFile);
+        $photo1->setType(InventoryEvidencePhotoType::FURNITURE);
+
 //        $photo2 = new InventoryEvidencePhoto();
 //        $photo2->setFilePath($qrcodeFileNewFile);
 //        $photo2->setType(InventoryEvidencePhotoType::QR);
@@ -122,7 +122,7 @@ class InventoryEvidenceCreateApiView
         $register->setUser($user);
         $register->setRegCreatedDt($now);
 
-//        $register->addPhoto($photo1);
+        $register->addPhoto($photo1);
 //        $register->addPhoto($photo2);
 
         $this->em->persist($register);
