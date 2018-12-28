@@ -8,6 +8,7 @@
 
 namespace DbModels\Mappings;
 
+use DbModels\Entities\Brand;
 use DbModels\Repositories\FurnitureTypeRepository;
 use DbModels\Utils\ClassMetadataUtils;
 use Doctrine\ORM\Mapping\Builder\ClassMetadataBuilder;
@@ -33,6 +34,11 @@ class FurnitureTypeMapping
 
         $builder->createField('name', 'string')->length(255)->build();
         $builder->createField('description', 'string')->nullable()->build();
+
+        $builder->createManyToOne('brand', Brand::class)
+            ->addJoinColumn('brand_id', 'id')
+            ->cascadeAll()
+            ->build();
 
         ClassMetadataUtils::poblateMetadataWithBaseEntityFields($builder);
     }

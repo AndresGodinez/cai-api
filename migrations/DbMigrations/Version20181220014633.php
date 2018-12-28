@@ -56,10 +56,12 @@ CREATE TABLE IF NOT EXISTS `s10_furniture_types` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `description` TEXT NULL,
+  `brand_id` BIGINT NULL,
   `reg_created_dt` DATETIME NULL,
   `reg_updated_dt` DATETIME NULL,
   `reg_status` TINYINT(4) NOT NULL DEFAULT 1 COMMENT '0 => INACTIVE\n1 => ACTIVE',
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`id`),
+  INDEX `furniture_types_idx_brand_id` (`brand_id` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 CREATE_TABLE

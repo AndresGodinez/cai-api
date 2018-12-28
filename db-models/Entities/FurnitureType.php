@@ -38,6 +38,9 @@ class FurnitureType
     /** @var null|string */
     protected $description;
 
+    /** @var null|Brand */
+    protected $brand;
+
     /**
      * @return int|null
      */
@@ -84,5 +87,21 @@ class FurnitureType
     public function setDescription(?string $description): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return Brand|null
+     */
+    public function getBrand(): ?Brand
+    {
+        return $this->brand;
+    }
+
+    /**
+     * @param Brand|null $brand
+     */
+    public function setBrand(?Brand $brand): void
+    {
+        $this->brand = $brand;
     }
 }
