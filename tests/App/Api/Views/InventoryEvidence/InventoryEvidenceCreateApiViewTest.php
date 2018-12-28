@@ -40,10 +40,19 @@ class InventoryEvidenceCreateApiViewTest extends DbUnitTestCase
         TestUtils::initConsts();
 
         self::$container = AppContainer::make(BASE_DIR);
+
+        // clear inventory-evidence-photos path
+        $photosStorageDir = BASE_DIR . "/tests/test-storage/inventory-evidence-photos";
+        if (\file_exists($photosStorageDir)) {
+            TestUtils::deleteDir($photosStorageDir);
+        }
     }
 
     public function testRouteResponseSuccessfully()
     {
+        $photosStorageDir = BASE_DIR . "/tests/test-storage/inventory-evidence-photos";
+        $this->assertDirectoryNotExists($photosStorageDir);
+
         $config = self::$container->get('model-config');
         $secret = $config->get('APP_JWT_SECRET');
 
@@ -140,6 +149,13 @@ class InventoryEvidenceCreateApiViewTest extends DbUnitTestCase
             ],
             $testTablePhotos
         );
+
+        $testTablePhotos = $conn->createQueryTable('testTablePhotos', 'select a.file_path from s30_inventory_evidence_photos a');
+
+        $photoRow = $testTablePhotos->getRow(0);
+        $this->assertFileExists($photosStorageDir . $photoRow['file_path']);
+        $photoRow = $testTablePhotos->getRow(1);
+        $this->assertFileExists($photosStorageDir . $photoRow['file_path']);
     }
 
     /**

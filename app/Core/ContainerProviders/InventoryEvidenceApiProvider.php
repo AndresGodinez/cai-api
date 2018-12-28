@@ -35,7 +35,8 @@ class InventoryEvidenceApiProvider extends AbstractServiceProvider
         $this->container
             ->add(InventoryEvidenceCreateApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
-            ->addMethodCall('setEm', ['entity-manager']);
+            ->addMethodCall('setEm', ['entity-manager'])
+            ->addMethodCall('setPhotosStorage', ['inventory-evidence-photos-filesystem']);
 
         $this->container
             ->add(InventoryEvidenceReadRegistersApiView::class)

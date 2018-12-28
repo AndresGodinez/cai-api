@@ -18,6 +18,7 @@ use DbModels\Entities\InventoryEvidence;
 use DbModels\Entities\InventoryEvidencePhoto;
 use DbModels\Entities\User;
 use Doctrine\ORM\EntityManagerInterface;
+use League\Flysystem\FilesystemInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UploadedFileInterface;
@@ -34,6 +35,9 @@ class InventoryEvidenceCreateApiView
     /** @var EntityManagerInterface */
     protected $em;
 
+    /** @var FilesystemInterface */
+    protected $photosStorage;
+
     public function setConfig(Config $config): void
     {
         $this->config = $config;
@@ -42,6 +46,14 @@ class InventoryEvidenceCreateApiView
     public function setEm(EntityManagerInterface $em): void
     {
         $this->em = $em;
+    }
+
+    /**
+     * @param FilesystemInterface $photosStorage
+     */
+    public function setPhotosStorage(FilesystemInterface $photosStorage): void
+    {
+        $this->photosStorage = $photosStorage;
     }
 
     /**
@@ -96,7 +108,7 @@ class InventoryEvidenceCreateApiView
         }
 
         // create photos registers
-        $dirName = \uniqid();
+        $dirName = '/' . \uniqid();
         $nowStr = $now->format('Ymd-His');
 
         /** @var UploadedFileInterface $furnitureFile */
@@ -116,6 +128,10 @@ class InventoryEvidenceCreateApiView
         $photo2 = new InventoryEvidencePhoto();
         $photo2->setFilePath($qrcodeFileNewFile);
         $photo2->setType(InventoryEvidencePhotoType::QR);
+
+        // copy photos to directory
+        $this->photosStorage->put($furnitureFileNewFile, $furnitureFile->getStream());
+        $this->photosStorage->put($qrcodeFileNewFile, $qrcodeFile->getStream());
 
         /** @var InventoryEvidence $register */
         $register = $requestData->exportEntity();

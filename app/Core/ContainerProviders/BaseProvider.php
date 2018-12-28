@@ -45,6 +45,8 @@ class BaseProvider extends AbstractServiceProvider
         'test-entity-manager',
         'emitter',
         'local-filesystem',
+        'inventory-evidence-photos-filesystem',
+        'test-inventory-evidence-photos-filesystem',
     ];
 
     /**
@@ -110,7 +112,39 @@ class BaseProvider extends AbstractServiceProvider
             $adapter = new Local($sharedDir);
             $filesystem = new Filesystem(
                 $adapter,
-                new Config([
+                new \League\Flysystem\Config([
+                    'disable_asserts' => true,
+                ])
+            );
+
+            return $filesystem;
+        });
+
+        $container->share('inventory-evidence-photos-filesystem', function () use ($baseDir, $container) {
+            if (\defined('TESTING') && !!TESTING) {
+                return $container->get('test-inventory-evidence-photos-filesystem');
+            }
+
+            $sharedDir = $baseDir . '/storage/inventory-evidence-photos' ?? '';
+
+            $adapter = new Local($sharedDir);
+            $filesystem = new Filesystem(
+                $adapter,
+                new \League\Flysystem\Config([
+                    'disable_asserts' => true,
+                ])
+            );
+
+            return $filesystem;
+        });
+
+        $container->share('test-inventory-evidence-photos-filesystem', function () use ($baseDir) {
+            $sharedDir = $baseDir . '/tests/test-storage/inventory-evidence-photos' ?? '';
+
+            $adapter = new Local($sharedDir);
+            $filesystem = new Filesystem(
+                $adapter,
+                new \League\Flysystem\Config([
                     'disable_asserts' => true,
                 ])
             );
