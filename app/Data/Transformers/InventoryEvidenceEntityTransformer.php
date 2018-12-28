@@ -23,6 +23,7 @@ class InventoryEvidenceEntityTransformer extends TransformerAbstract
         'furnitureType',
         'clerk',
         'user',
+        'photos',
     ];
 
     /**
@@ -87,5 +88,20 @@ class InventoryEvidenceEntityTransformer extends TransformerAbstract
     public function includeUser(InventoryEvidence $item)
     {
         return $this->item($item->getUser(), new UserEntityTransformer);
+    }
+
+    /**
+     * @param InventoryEvidence $item
+     * @return \League\Fractal\Resource\Collection|\League\Fractal\Resource\NullResource
+     */
+    public function includePhotos(InventoryEvidence $item)
+    {
+        $photos = $item->getPhotos();
+
+        if (!$photos) {
+            return $this->null();
+        }
+
+        return $this->collection($photos->toArray(), new InventoryEvidencePhotoEntityTransformer);
     }
 }

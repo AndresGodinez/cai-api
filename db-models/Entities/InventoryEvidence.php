@@ -11,6 +11,7 @@ namespace DbModels\Entities;
 use DbModels\Mappings\InventoryEvidenceMapping;
 use DbModels\Traits\BaseEntityFieldsTrait;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping\ClassMetadata;
 
 /**
@@ -51,7 +52,7 @@ class InventoryEvidence
     /** @var User */
     protected $user;
 
-    /** @var ArrayCollection */
+    /** @var Collection */
     protected $photos;
 
     /**
@@ -203,5 +204,21 @@ class InventoryEvidence
     public function setUser(User $user): void
     {
         $this->user = $user;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getPhotos(): Collection
+    {
+        return $this->photos;
+    }
+
+    /**
+     * @param Collection $photos
+     */
+    public function setPhotos(Collection $photos): void
+    {
+        $this->photos = $photos;
     }
 }

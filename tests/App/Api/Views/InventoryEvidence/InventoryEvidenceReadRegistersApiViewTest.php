@@ -11,6 +11,8 @@ namespace Tests\App\Api\Views\InventoryEvidence;
 use App\Consts\Http;
 use App\Core\AppContainer;
 use DbModels\Consts\DefaultEntityRegStatus;
+use DbModels\Consts\InventoryEvidencePhotoType;
+use DbModels\Entities\InventoryEvidencePhoto;
 use League\Route\Router;
 use PHPUnit\DbUnit\DataSet\IDataSet;
 use Psr\Container\ContainerInterface;
@@ -44,7 +46,7 @@ class InventoryEvidenceReadRegistersApiViewTest extends DbUnitTestCase
         /** @var Router $router */
         $router = self::$container->get('router');
 
-        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence');
+        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence', ['include' => 'photos']);
         $request = $request->withHeader(Http::HEADER_AUTHORIZATION, 'Bearer ' . $jwt);
 
         /** @var ResponseInterface $response */
@@ -70,6 +72,7 @@ class InventoryEvidenceReadRegistersApiViewTest extends DbUnitTestCase
         $this->assertArrayHasKey('clerkId', $item);
         $this->assertArrayHasKey('userId', $item);
         $this->assertArrayHasKey('regStatus', $item);
+        $this->assertArrayHasKey('photos', $item);
 
         $this->assertInternalType('int', $item['id']);
         $this->assertInternalType('string', $item['code']);
@@ -90,6 +93,21 @@ class InventoryEvidenceReadRegistersApiViewTest extends DbUnitTestCase
         $this->assertEquals(3, $item['clerkId']);
         $this->assertEquals(2, $item['userId']);
         $this->assertEquals(DefaultEntityRegStatus::ACTIVE, $item['regStatus']);
+
+        $photos = $item['photos']['data'];
+        $this->assertEquals(2, \count($photos));
+
+        $photo = $photos[0];
+        $this->assertArrayHasKey('id', $photo);
+        $this->assertArrayHasKey('filePath', $photo);
+        $this->assertArrayHasKey('type', $photo);
+        $this->assertEquals(InventoryEvidencePhotoType::FURNITURE, $photo['type']);
+
+        $photo = $photos[1];
+        $this->assertArrayHasKey('id', $photo);
+        $this->assertArrayHasKey('filePath', $photo);
+        $this->assertArrayHasKey('type', $photo);
+        $this->assertEquals(InventoryEvidencePhotoType::QR, $photo['type']);
     }
 
     /**

@@ -23,6 +23,6 @@ class InventoryEvidenceRepository extends EntityRepository
      */
     public function getValidRegistersFromUserId(int $userId)
     {
-        return $this->findBy(['user' => $userId, 'regStatus' => DefaultEntityRegStatus::ACTIVE]);
+        return $this->findBy(['user' => $userId, 'regStatus' => DefaultEntityRegStatus::ACTIVE], ['id' => 'DESC']);
     }
 }
