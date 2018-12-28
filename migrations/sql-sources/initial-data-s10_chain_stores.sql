@@ -28,3 +28,6 @@ INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_stat
 INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (28, 'NYX', null, null, 1);
 INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (29, 'ULTRA FEMME', null, null, 1);
 INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (30, 'DAX', null, null, 1);
+INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (31, 'AL SUPER', null, null, 1);
+INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (32, 'COSMETICA ACTIVA', null, null, 1);
+INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (33, 'BODESA', null, null, 1);
