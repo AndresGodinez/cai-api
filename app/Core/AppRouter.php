@@ -13,8 +13,10 @@ use App\Api\Brand\BrandListApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
+use App\Api\InventoryEvidencePhoto\InventoryEvidencePhotoReadPhotoContentApiView;
 use App\Api\User\UserDataApiView;
 use App\Core\Middlewares\SecureApiMiddleware;
+use App\Core\Middlewares\SecureApiQueryParamMiddleware;
 use App\Factories\ResponseFactory;
 use League\Container\Container;
 use League\Route\Router;
@@ -36,6 +38,7 @@ class AppRouter
         /** @var array $config */
         $config = $container->get('array-config');
         $secureApiMiddleware = new SecureApiMiddleware($config);
+        $secureApiQueryParamMiddleware = new SecureApiQueryParamMiddleware($config);
 
         $strategy = new ApplicationStrategy();
         $strategy -> setContainer($container);
@@ -76,6 +79,10 @@ class AppRouter
         $r = $route->get('/api/inventory-evidence', InventoryEvidenceReadRegistersApiView::class);
         $r->setName('inventory-evidence-read-registers-route');
         $r->middleware($secureApiMiddleware);
+
+        $r = $route->get('/api/inventory-evidence-photo/{regId:regId}', InventoryEvidencePhotoReadPhotoContentApiView::class);
+        $r->setName('inventory-evidence-photo-read-photo-content-route');
+        $r->middleware($secureApiQueryParamMiddleware);
 
         return $route;
     }

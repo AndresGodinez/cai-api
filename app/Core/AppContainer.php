@@ -13,6 +13,7 @@ use App\Core\ContainerProviders\BaseProvider;
 use App\Core\ContainerProviders\BrandApiProvider;
 use App\Core\ContainerProviders\FurnitureTypeApiProvider;
 use App\Core\ContainerProviders\InventoryEvidenceApiProvider;
+use App\Core\ContainerProviders\InventoryEvidencePhotoApiProvider;
 use App\Core\ContainerProviders\ModelsProvider;
 use App\Core\ContainerProviders\UserApiProvider;
 use League\Container\Container;
@@ -45,6 +46,8 @@ class AppContainer
         $container->addServiceProvider(new FurnitureTypeApiProvider);
 
         $container->addServiceProvider(new InventoryEvidenceApiProvider);
+
+        $container->addServiceProvider(new InventoryEvidencePhotoApiProvider);
 
         return $container;
     }

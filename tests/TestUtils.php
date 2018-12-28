@@ -86,6 +86,26 @@ class TestUtils
         $testInst->assertNotNull($arrayBody);
     }
 
+    /**
+     * @param TestCase $testInst
+     * @param ResponseInterface $response
+     */
+    public static function runDefaulImageJpegResponseTests(TestCase $testInst, ResponseInterface $response, int $wantedStatusCode = Http::STATUS_CODE_HTTP_OK)
+    {
+        $testInst->assertNotNull($response);
+        $testInst->assertInstanceOf(ResponseInterface::class, $response);
+
+        $testInst->assertTrue($response->hasHeader(Http::HEADER_CONTENT_TYPE), 'The response does not have the CONTENT_TYPE header');
+
+        $contentType = $response->getHeaderLine(Http::HEADER_CONTENT_TYPE);
+        $testInst->assertEquals($contentType, Http::CONTENT_TYPE_IMAGE_JPEG, 'The response CONTENT_TYPE header is not JPEG');
+
+        $testInst->assertEquals($wantedStatusCode, $response->getStatusCode());
+
+        $body = (string)$response->getBody();
+        $testInst->assertNotNull($body);
+    }
+
     public static function deleteDir($dirPath) {
         if (!\is_dir($dirPath)) {
             throw new InvalidArgumentException("$dirPath must be a directory");

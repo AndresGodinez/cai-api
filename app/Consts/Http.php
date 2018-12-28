@@ -25,6 +25,7 @@ class Http
     const CONTENT_TYPE_APPLICATION_ZIP_OCTET_STREAM = 'application/zip, application/octet-stream';
     const CONTENT_TYPE_APPLICATION_SPREADSHEET = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
     const CONTENT_TYPE_IMAGE_SVG_XML = 'image/svg+xml';
+    const CONTENT_TYPE_IMAGE_JPEG = 'image/jpeg';
 
     const STATUS_CODE_HTTP_CONTINUE = 100;
     const STATUS_CODE_HTTP_SWITCHING_PROTOCOLS = 101;
