@@ -17,6 +17,7 @@ use DbModels\Consts\InventoryEvidencePhotoType;
 use DbModels\Entities\InventoryEvidence;
 use DbModels\Entities\InventoryEvidencePhoto;
 use DbModels\Entities\User;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use League\Flysystem\FilesystemInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -142,7 +143,14 @@ class InventoryEvidenceCreateApiView
         $register->addPhoto($photo2);
 
         $this->em->persist($register);
-        $this->em->flush();
+        try {
+            $this->em->flush();
+        } catch (UniqueConstraintViolationException $ex) {
+            $logger->error($ex->getMessage());
+            $response = ResponseFactory::buildBasicBadJsonResponse();
+            $response->getBody()->write(\json_encode(['msg' => 'El código dado ya fue registrado con anterioridad.']));
+            return $response;
+        }
 
         $response = ResponseFactory::buildBasicJsonResponse();
         $response->getBody()->write(\json_encode([
