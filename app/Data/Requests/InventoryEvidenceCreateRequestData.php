@@ -15,8 +15,10 @@ use DbModels\Consts\DefaultEntityRegStatus;
 use DbModels\Entities\Brand;
 use DbModels\Entities\Clerk;
 use DbModels\Entities\FurnitureType;
+use DbModels\Entities\InventoryCode;
 use DbModels\Entities\InventoryEvidence;
 use DbModels\Entities\Store;
+use DbModels\Repositories\InventoryCodeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
@@ -189,6 +191,15 @@ class InventoryEvidenceCreateRequestData implements ValidatableRequestDataInterf
 
         if (!\preg_match($expectedCodeRx, $this->code)) {
             throw new ValidationException("El código no cumple con el formato esperado.");
+        }
+
+        /** @var InventoryCodeRepository $inventoryCodeRepo */
+        $inventoryCodeRepo = $this->em->getRepository(InventoryCode::class);
+
+        $inventoryCode = $inventoryCodeRepo->findBy(['code' => $this->code]);
+
+        if (!$inventoryCode) {
+            throw new ValidationException("El código es inválido.");
         }
     }
 }

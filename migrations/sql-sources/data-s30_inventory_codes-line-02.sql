@@ -1,0 +1,1 @@
+INSERT INTO s30_inventory_codes(code) VALUES ('02010001');
