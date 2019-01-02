@@ -53,7 +53,6 @@ class ValidatePhotoUploadSizesApiMiddleware implements MiddlewareInterface
             return $response;
         }
 
-        $validMimeTypesRegex = '/^image\/(?:png|jpe?g)$/i';
         $limitPhotoSize = $this->config['APP_LIMIT_SIZE_PHOTO'] ?? 0;
         $limitPhotosRequestSize = $this->config['APP_LIMIT_SIZE_PHOTOS_REQUEST'] ?? 0;
 
@@ -62,12 +61,6 @@ class ValidatePhotoUploadSizesApiMiddleware implements MiddlewareInterface
         $err = '';
         /** @var UploadedFileInterface $uploadedFile */
         foreach ($uploadedFiles as $uploadedFile) {
-            // validate mime-type
-            if (!preg_match($validMimeTypesRegex, $uploadedFile->getClientMediaType())) {
-                $err = 'Uno de los archivos no es del formato esperado (JPEG, PNG).';
-                break;
-            }
-
             $uploadedFileMbSize = \round($uploadedFile->getSize() / 1048576, 2);
             if ($uploadedFileMbSize > $limitPhotoSize) {
                 $err = 'Una de las fotos es demasiado grande para procesarse. Por favor, suba imágenes que no sobrepasen los ' . $limitPhotoSize . ' MB.';
