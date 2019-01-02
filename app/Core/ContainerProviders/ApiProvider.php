@@ -9,6 +9,7 @@
 namespace App\Core\ContainerProviders;
 
 use App\Api\AuthApiView;
+use App\Api\PhotoUploadSizeTestApiView;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 
 /**
@@ -18,7 +19,8 @@ use League\Container\ServiceProvider\AbstractServiceProvider;
 class ApiProvider extends AbstractServiceProvider
 {
     protected $provides = [
-        AuthApiView::class
+        AuthApiView::class,
+        PhotoUploadSizeTestApiView::class,
     ];
 
     /**
@@ -34,5 +36,9 @@ class ApiProvider extends AbstractServiceProvider
             ->add(AuthApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(PhotoUploadSizeTestApiView::class)
+            ->addMethodCall('setConfig', ['model-config']);
     }
 }

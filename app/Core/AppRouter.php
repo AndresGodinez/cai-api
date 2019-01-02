@@ -14,9 +14,11 @@ use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
 use App\Api\InventoryEvidencePhoto\InventoryEvidencePhotoReadPhotoContentApiView;
+use App\Api\PhotoUploadSizeTestApiView;
 use App\Api\User\UserDataApiView;
 use App\Core\Middlewares\SecureApiMiddleware;
 use App\Core\Middlewares\SecureApiQueryParamMiddleware;
+use App\Core\Middlewares\ValidatePhotoUploadSizesApiMiddleware;
 use App\Factories\ResponseFactory;
 use League\Container\Container;
 use League\Route\Router;
@@ -39,6 +41,7 @@ class AppRouter
         $config = $container->get('array-config');
         $secureApiMiddleware = new SecureApiMiddleware($config);
         $secureApiQueryParamMiddleware = new SecureApiQueryParamMiddleware($config);
+        $validatePhotoUploadSizeApiMiddleware = new ValidatePhotoUploadSizesApiMiddleware($config);
 
         $strategy = new ApplicationStrategy();
         $strategy -> setContainer($container);
@@ -60,6 +63,11 @@ class AppRouter
 
         $route->post('/api/auth', AuthApiView::class)->setName('auth-route');
 
+        $r = $route->POST('/api/photo-upload-size-test', PhotoUploadSizeTestApiView::class);
+        $r->setName('photo-upload-size-test-route');
+        $r->middleware($secureApiMiddleware);
+        $r->middleware($validatePhotoUploadSizeApiMiddleware);
+
         $r = $route->get('/api/user/{regId:regId}/data', UserDataApiView::class);
         $r->setName('user-data-route');
         $r->middleware($secureApiMiddleware);
@@ -75,6 +83,7 @@ class AppRouter
         $r = $route->post('/api/inventory-evidence', InventoryEvidenceCreateApiView::class);
         $r->setName('inventory-evidence-create-route');
         $r->middleware($secureApiMiddleware);
+        $r->middleware($validatePhotoUploadSizeApiMiddleware);
 
         $r = $route->get('/api/inventory-evidence', InventoryEvidenceReadRegistersApiView::class);
         $r->setName('inventory-evidence-read-registers-route');
