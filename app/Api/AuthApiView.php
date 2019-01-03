@@ -79,6 +79,7 @@ class AuthApiView
             "sub" => \uniqid(),
             'userId' => $register->getId(),
             'name' => $register->getName(),
+            'type' => $register->getType(),
         ];
 
         $token = SecurityUtils::encodeDataToJwt($secret, $tokenData);
