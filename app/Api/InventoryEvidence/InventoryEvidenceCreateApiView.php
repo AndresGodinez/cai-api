@@ -102,7 +102,7 @@ class InventoryEvidenceCreateApiView
             $logger->error($ve->getMessage());
 
             $response = ResponseFactory::buildBasicBadJsonResponse();
-            $bodyArr = ["msg" => "Fallo al validar los datos", "detail" => $ve->getMessage()];
+            $bodyArr = ["msg" => "Error al validar los datos", "detail" => $ve->getMessage()];
             $response->getBody()->write(\json_encode($bodyArr));
 
             return $response;
