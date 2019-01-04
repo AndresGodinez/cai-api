@@ -10,6 +10,7 @@ namespace App\Core;
 
 use App\Api\AuthApiView;
 use App\Api\Brand\BrandListApiView;
+use App\Api\Clerk\ClerkCaptureStatisticsApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
@@ -94,6 +95,10 @@ class AppRouter
         $r = $route->get('/api/inventory-evidence-photo/{regId:regId}', InventoryEvidencePhotoReadPhotoContentApiView::class);
         $r->setName('inventory-evidence-photo-read-photo-content-route');
         $r->middleware($secureApiQueryParamMiddleware);
+
+        $r = $route->get('/api/clerk/{regId:regId}/capture-statistics', ClerkCaptureStatisticsApiView::class);
+        $r->setName('clerk-capture-statistics-route');
+        $r->middleware($secureApiMiddleware);
 
         // indicator routes
 

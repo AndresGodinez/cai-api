@@ -11,6 +11,7 @@ namespace App\Core;
 use App\Core\ContainerProviders\ApiProvider;
 use App\Core\ContainerProviders\BaseProvider;
 use App\Core\ContainerProviders\BrandApiProvider;
+use App\Core\ContainerProviders\ClerkApiProvider;
 use App\Core\ContainerProviders\FurnitureTypeApiProvider;
 use App\Core\ContainerProviders\IndicatorApiProvider;
 use App\Core\ContainerProviders\InventoryEvidenceApiProvider;
@@ -41,6 +42,8 @@ class AppContainer
         $container->addServiceProvider(new ApiProvider);
 
         $container->addServiceProvider(new UserApiProvider);
+
+        $container->addServiceProvider(new ClerkApiProvider);
 
         $container->addServiceProvider(new BrandApiProvider);
 
