@@ -46,6 +46,7 @@ class UserData
             \array_push($states[$item['stateId']]['shops'], [
                 'id' => (int)$item['storeId'],
                 'name' => $item['storeName'],
+                'address' => $item['storeAddress'],
             ]);
         }
 

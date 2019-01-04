@@ -36,7 +36,7 @@ class UserRepository extends EntityRepository
         }
 
         $qb = $this->getEntityManager()->createQueryBuilder();
-        $qb->select('c.id AS stateId', 'c.name AS stateName', 'c.code AS stateCode', 'b.id AS storeId', 'b.name AS storeName');
+        $qb->select('c.id AS stateId', 'c.name AS stateName', 'c.code AS stateCode', 'b.id AS storeId', 'b.name AS storeName', 'b.address AS storeAddress');
         $qb->from(StoreClerk::class, 'a');
         $qb->leftJoin(Store::class, 'b', Expr\Join::WITH, 'a.store = b.id');
         $qb->leftJoin(State::class, 'c', Expr\Join::WITH, 'b.state = c.id');

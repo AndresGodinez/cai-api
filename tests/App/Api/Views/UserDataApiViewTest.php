@@ -92,9 +92,11 @@ class UserDataApiViewTest extends DbUnitTestCase
         $shop0 = $state['shops'][0];
         $this->assertArrayHasKey('id', $shop0);
         $this->assertArrayHasKey('name', $shop0);
+        $this->assertArrayHasKey('address', $shop0);
 
         $this->assertInternalType('int', $shop0['id']);
         $this->assertInternalType('string', $shop0['name']);
+        $this->assertInternalType('string', $shop0['address']);
 
         $this->assertEquals(92, $shop0['id']);
         $this->assertEquals('CHEDRAUI CUAJIMALPA SUC 147', $shop0['name']);
