@@ -11,6 +11,7 @@ namespace App\Core;
 use App\Api\AuthApiView;
 use App\Api\Brand\BrandListApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
+use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
@@ -94,13 +95,15 @@ class AppRouter
         $r->setName('inventory-evidence-photo-read-photo-content-route');
         $r->middleware($secureApiQueryParamMiddleware);
 
+        // indicator routes
+
+        $r = $route->get('/api/indicator/progress-perc-by-clerk', ProgressPercByClerkApiView::class);
+        $r->setName('indicator-progress-perc-by-clerk-route');
+
         //routes to dashboard
 
         $r = $route->get('/api/get-inventory-evidence', GetInventoryEvidenceApiView::class);
         $r->setName('get-inventory-evidence');
-
-        $r = $route->get('/api/get-data-catalogs-evidence', GetDataCatlogsEvidenceApiView::class);
-        $r->setName('get-data-catalogs-evidence');
 
 
         return $route;

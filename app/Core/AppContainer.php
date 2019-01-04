@@ -12,6 +12,7 @@ use App\Core\ContainerProviders\ApiProvider;
 use App\Core\ContainerProviders\BaseProvider;
 use App\Core\ContainerProviders\BrandApiProvider;
 use App\Core\ContainerProviders\FurnitureTypeApiProvider;
+use App\Core\ContainerProviders\IndicatorApiProvider;
 use App\Core\ContainerProviders\InventoryEvidenceApiProvider;
 use App\Core\ContainerProviders\InventoryEvidencePhotoApiProvider;
 use App\Core\ContainerProviders\ModelsProvider;
@@ -48,6 +49,8 @@ class AppContainer
         $container->addServiceProvider(new InventoryEvidenceApiProvider);
 
         $container->addServiceProvider(new InventoryEvidencePhotoApiProvider);
+
+        $container->addServiceProvider(new IndicatorApiProvider);
 
         return $container;
     }
