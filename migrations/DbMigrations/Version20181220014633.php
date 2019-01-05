@@ -142,10 +142,11 @@ CREATE TABLE IF NOT EXISTS `s10_stores` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `city_name` VARCHAR(255) NOT NULL DEFAULT '',
-  `address` TEXT NOT NULL DEFAULT '',
+  `address` TEXT NOT NULL,
   `postal_code` VARCHAR(30) NULL,
   `schedule` VARCHAR(50) NULL,
   `type` VARCHAR(50) NULL,
+  `sap_code` VARCHAR(50) NOT NULL DEFAULT '',
   `state_id` BIGINT NOT NULL,
   `chain_store_id` BIGINT NOT NULL,
   `reg_created_dt` DATETIME NULL,
@@ -155,7 +156,8 @@ CREATE TABLE IF NOT EXISTS `s10_stores` (
   INDEX `stores_idx_type` (`type` ASC),
   INDEX `stores_idx_state_id` (`state_id` ASC),
   INDEX `stores_idx_chain_store_id` (`chain_store_id` ASC),
-  INDEX `stores_idx_city_name` (`city_name` ASC))
+  INDEX `stores_idx_city_name` (`city_name` ASC),
+  INDEX `stores_idx_sap_code` (`sap_code` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8
 CREATE_TABLE

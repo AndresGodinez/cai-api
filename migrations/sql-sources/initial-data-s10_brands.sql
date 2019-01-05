@@ -12,9 +12,4 @@ INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt,
 INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (12, 'PCI', '05', 2, null, null, 1);
 INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (13, 'LANCOME', '06', 2, null, null, 1);
 INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (14, 'COSMETICA ACTIVA', '01', 3, null, null, 1);
-INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (15, 'L''OREAL', '01', 4, null, null, 1);
-INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (16, 'LIVERPOOL', '02', 4, null, null, 1);
-INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (17, 'PALACIO DE HIERRO', '03', 4, null, null, 1);
-INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (18, 'SANBORNS', '04', 4, null, null, 1);
-INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (19, 'SEARS', '05', 4, null, null, 1);
-INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (20, 'SEPHORA', '06', 4, null, null, 1);
+INSERT INTO s10_brands (id, name, code, line_id, reg_created_dt, reg_updated_dt, reg_status) VALUES (15, 'GENERICA', 'XX', 4, null, null, 1);

@@ -31,3 +31,5 @@ INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_stat
 INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (31, 'AL SUPER', null, null, 1);
 INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (32, 'COSMETICA ACTIVA', null, null, 1);
 INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (33, 'BODESA', null, null, 1);
+INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (34, 'EL NUEVO MUNDO', null, null, 1);
+INSERT INTO s10_chain_stores (id, name, reg_created_dt, reg_updated_dt, reg_status) VALUES (35, 'DERMO', null, null, 1);
