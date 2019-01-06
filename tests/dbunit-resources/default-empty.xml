@@ -3,8 +3,8 @@
 <database name="test_EYCei">
 	<table_structure name="db_versions">
 		<field Field="version" Type="varchar(255)" Null="NO" Key="PRI" Extra="" Comment="" />
-		<key Table="db_versions" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="version" Collation="A" Cardinality="16" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="db_versions" Engine="InnoDB" Version="10" Row_format="Compact" Rows="16" Avg_row_length="1024" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2018-12-20 01:53:44" Collation="utf8_unicode_ci" Create_options="" Comment="" />
+		<key Table="db_versions" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="version" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="db_versions" Engine="InnoDB" Version="10" Row_format="Compact" Rows="17" Avg_row_length="963" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2019-01-04 18:06:16" Collation="utf8_unicode_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="db_versions">
 	<row>
@@ -55,6 +55,9 @@
 	<row>
 		<field name="version">20190102225834</field>
 	</row>
+	<row>
+		<field name="version">20190106194636</field>
+	</row>
 	</table_data>
 	<table_structure name="s00_users">
 		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
@@ -71,7 +74,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s00_users" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s00_users" Non_unique="1" Key_name="users_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="0" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s00_users" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s00_users" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:03" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s00_users">
 	</table_data>
@@ -88,7 +91,7 @@
 		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="2" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_brands" Non_unique="1" Key_name="brands_idx_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_brands">
 	</table_data>
@@ -100,7 +103,7 @@
 		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
 1 =&gt; ACTIVE" />
 		<key Table="s10_chain_stores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_chain_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_chain_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_chain_stores">
 	</table_data>
@@ -114,7 +117,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s10_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_clerks" Non_unique="0" Key_name="clerks_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:03" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_clerks">
 	</table_data>
@@ -127,11 +130,10 @@
 		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
 1 =&gt; ACTIVE" />
 		<key Table="s10_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_furniture_types">
 	</table_data>
-
 	<table_structure name="s10_lines">
 		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
 		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
@@ -142,7 +144,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s10_lines" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_lines" Non_unique="0" Key_name="lines_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_lines" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_lines" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_lines">
 	</table_data>
@@ -156,7 +158,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s10_states" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_states" Non_unique="0" Key_name="states_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_states" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_states" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_states">
 	</table_data>
@@ -168,6 +170,7 @@
 		<field Field="postal_code" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
 		<field Field="schedule" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
 		<field Field="type" Type="varchar(50)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<field Field="sap_code" Type="varchar(50)" Null="NO" Key="MUL" Default="" Extra="" Comment="" />
 		<field Field="state_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="chain_store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
@@ -179,9 +182,23 @@
 		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_state_id" Seq_in_index="1" Column_name="state_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_chain_store_id" Seq_in_index="1" Column_name="chain_store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_city_name" Seq_in_index="1" Column_name="city_name" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="65536" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_sap_code" Seq_in_index="1" Column_name="sap_code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="81920" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_stores">
+	</table_data>
+	<table_structure name="s20_brands_furniture_types">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="brand_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="furniture_type_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="0" Key_name="bft_uidx_brand_id_furniture_type_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="0" Key_name="bft_uidx_brand_id_furniture_type_id" Seq_in_index="2" Column_name="furniture_type_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="1" Key_name="bft_idx_brand_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="1" Key_name="bft_idx_furniture_type_id" Seq_in_index="1" Column_name="furniture_type_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s20_brands_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:58:43" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s20_brands_furniture_types">
 	</table_data>
 	<table_structure name="s20_stores_brands">
 		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
@@ -190,7 +207,7 @@
 		<key Table="s20_stores_brands" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="2" Column_name="brand_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s20_stores_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s20_stores_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s20_stores_brands">
 	</table_data>
@@ -201,7 +218,7 @@
 		<key Table="s20_stores_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="2" Column_name="clerk_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s20_stores_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s20_stores_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s20_stores_clerks">
 	</table_data>
@@ -210,7 +227,7 @@
 		<field Field="code" Type="varchar(8)" Null="NO" Key="UNI" Extra="" Comment="" />
 		<key Table="s30_inventory_codes" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_codes" Non_unique="0" Key_name="inventory_codes_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s30_inventory_codes" Engine="MyISAM" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="0" Max_data_length="281474976710655" Index_length="1024" Data_free="0" Auto_increment="1" Create_time="2019-01-02 23:13:35" Update_time="2019-01-02 23:13:35" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s30_inventory_codes" Engine="MyISAM" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="0" Max_data_length="281474976710655" Index_length="1024" Data_free="0" Auto_increment="1" Create_time="2019-01-06 20:24:44" Update_time="2019-01-06 20:24:44" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s30_inventory_codes">
 	</table_data>
@@ -225,7 +242,7 @@
 		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="2" Column_name="type" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidence_photos" Non_unique="1" Key_name="iep_idx_inventory_evidence_id" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s30_inventory_evidence_photos" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:03" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s30_inventory_evidence_photos" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:05" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s30_inventory_evidence_photos">
 	</table_data>
@@ -249,7 +266,7 @@
 		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_furniture_type_id" Seq_in_index="1" Column_name="furniture_type_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_user_id" Seq_in_index="1" Column_name="user_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s30_inventory_evidences" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="98304" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s30_inventory_evidences" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="98304" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:08" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s30_inventory_evidences">
 	</table_data>

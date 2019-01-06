@@ -1,0 +1,2227 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="test_EYCei">
+	<table_structure name="db_versions">
+		<field Field="version" Type="varchar(255)" Null="NO" Key="PRI" Extra="" Comment="" />
+		<key Table="db_versions" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="version" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="db_versions" Engine="InnoDB" Version="10" Row_format="Compact" Rows="17" Avg_row_length="963" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2019-01-04 18:06:16" Collation="utf8_unicode_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="db_versions">
+	<row>
+		<field name="version">20181220014633</field>
+	</row>
+	<row>
+		<field name="version">20181221185900</field>
+	</row>
+	<row>
+		<field name="version">20181221190201</field>
+	</row>
+	<row>
+		<field name="version">20181221190350</field>
+	</row>
+	<row>
+		<field name="version">20181221190601</field>
+	</row>
+	<row>
+		<field name="version">20181221190654</field>
+	</row>
+	<row>
+		<field name="version">20181221191020</field>
+	</row>
+	<row>
+		<field name="version">20181221191227</field>
+	</row>
+	<row>
+		<field name="version">20181221191358</field>
+	</row>
+	<row>
+		<field name="version">20181227173406</field>
+	</row>
+	<row>
+		<field name="version">20181228191037</field>
+	</row>
+	<row>
+		<field name="version">20181228221427</field>
+	</row>
+	<row>
+		<field name="version">20190102224519</field>
+	</row>
+	<row>
+		<field name="version">20190102225512</field>
+	</row>
+	<row>
+		<field name="version">20190102225744</field>
+	</row>
+	<row>
+		<field name="version">20190102225834</field>
+	</row>
+	<row>
+		<field name="version">20190106194636</field>
+	</row>
+	</table_data>
+	<table_structure name="s00_users">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="username" Type="varchar(100)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="pswd" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="type" Type="tinyint(4)" Null="NO" Key="" Default="0" Extra="" Comment="0 =&gt; UNKNOWN
+1 =&gt; ADMIN
+2 =&gt; CLERK" />
+		<field Field="clerk_id" Type="bigint(20)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s00_users" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s00_users" Non_unique="1" Key_name="users_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="0" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s00_users" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:03" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s00_users">
+	</table_data>
+	<table_structure name="s10_brands">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="line_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_brands" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="15" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="15" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="2" Column_name="code" Collation="A" Cardinality="15" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_brands" Non_unique="1" Key_name="brands_idx_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="15" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="15" Avg_row_length="1092" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="16" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_brands">
+	<row>
+		<field name="id">1</field>
+		<field name="name">GARNIER</field>
+		<field name="code">01</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">NYX</field>
+		<field name="code">02</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">FARMACIAS</field>
+		<field name="code">03</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="name">LOREAL</field>
+		<field name="code">04</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="name">DERMO</field>
+		<field name="code">05</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="name">MAYBELLINE</field>
+		<field name="code">06</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="name">VOGUE</field>
+		<field name="code">07</field>
+		<field name="line_id">1</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="name">GAC</field>
+		<field name="code">01</field>
+		<field name="line_id">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="name">UD</field>
+		<field name="code">02</field>
+		<field name="line_id">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="name">V&amp;R</field>
+		<field name="code">03</field>
+		<field name="line_id">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="name">YSL</field>
+		<field name="code">04</field>
+		<field name="line_id">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="name">PCI</field>
+		<field name="code">05</field>
+		<field name="line_id">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="name">LANCOME</field>
+		<field name="code">06</field>
+		<field name="line_id">2</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="name">COSMETICA ACTIVA</field>
+		<field name="code">01</field>
+		<field name="line_id">3</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="name">GENERICA</field>
+		<field name="code">XX</field>
+		<field name="line_id">4</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_chain_stores">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_chain_stores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_chain_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_chain_stores">
+	</table_data>
+	<table_structure name="s10_clerks">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_clerks" Non_unique="0" Key_name="clerks_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:03" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_clerks">
+	</table_data>
+	<table_structure name="s10_furniture_types">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="description" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="132" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="132" Avg_row_length="124" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="133" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_furniture_types">
+	<row>
+		<field name="id">1</field>
+		<field name="name">MAKEUP DESIGNER</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">MAKEUP DESIGNER COPETE NEGRO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">SPARKIST 3.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="name">SPARKIST 3.60 COPETE NEGRO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="name">SPARKIST 2.40</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="name">SPARKIST 1.70 NUEVO Y ACCESORIOS</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="name">SPARKIST 1.70 COPETE NEGRO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="name">SPARKIST 1.20 NUEVO Y ACCESORIOS</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="name">SPARKIST 1.20 COPETE NEGRO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="name">SPARKLE 3.60 X 1.45</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="name">SPARKLE 3.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="name">SPARKLE 2.40</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="name">SPARKLE 1.70</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="name">SPARKLE 1.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="name">DIAMOND 2.40</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="name">DIAMOND 1.70</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="name">DIAMOND 1.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="name">PREMIUM 4.80 X 1.45</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="name">PREMIUM 3.60 X 1.45</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="name">PREMIUM 2.40</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">21</field>
+		<field name="name">PREMIUM 1.70</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">22</field>
+		<field name="name">PREMIUM 1.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">23</field>
+		<field name="name">GONDOLAS MAKE UP</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">24</field>
+		<field name="name">GONDOLAS BASICA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">25</field>
+		<field name="name">GONDOLAS PREMIUM</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">26</field>
+		<field name="name">BERGERIE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">27</field>
+		<field name="name">PLAZA CENTRAL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">28</field>
+		<field name="name">MAKE IT HAPPEN 3.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">29</field>
+		<field name="name">MAKE IT HAPPEN 2.40</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">30</field>
+		<field name="name">MAKE IT HAPPEN 1.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">31</field>
+		<field name="name">CITY 3.60 X 1.45</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">32</field>
+		<field name="name">CITY 3.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">33</field>
+		<field name="name">CITY 2.40 CENEFA GRANDE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">34</field>
+		<field name="name">CITY 2.40 CENEFA CHICA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">35</field>
+		<field name="name">CITY 1.60 CENEFA GRANDE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">36</field>
+		<field name="name">CITY 1.60 CENEFA CHICA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">37</field>
+		<field name="name">URBAN CHIC 4.80 X 1.45</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">38</field>
+		<field name="name">URBAN CHIC 3.60 X 1.45</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">39</field>
+		<field name="name">URBAN CHIC 3.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">40</field>
+		<field name="name">URBAN CHIC 2.40</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">41</field>
+		<field name="name">URBAN CHIC 1.60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">42</field>
+		<field name="name">LIP BAR / FACE BAR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">43</field>
+		<field name="name">SCULPT STUDIO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">44</field>
+		<field name="name">TREND BAR 1.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">45</field>
+		<field name="name">TREND BAR 60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">46</field>
+		<field name="name">NAIL BAR 1.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">47</field>
+		<field name="name">NAIL BAR 60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">48</field>
+		<field name="name">BERGERIE MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">49</field>
+		<field name="name">TORRE ILUSIÓN</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">50</field>
+		<field name="name">TOTEM ILUSIÓN</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">51</field>
+		<field name="name">WHITE WALL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">52</field>
+		<field name="name">WHITE WALL 8 FT</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">53</field>
+		<field name="name">WHITE WALL 12 FT GLORIFICADOR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">54</field>
+		<field name="name">WHITE WALL 14 FT GLORIFICADOR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">55</field>
+		<field name="name">WHITE WALL 16 FT CHAPARRO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">56</field>
+		<field name="name">WHITE WALL 16 FT GLORIFICADOR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">57</field>
+		<field name="name">WHITE WALL 20 FT CHAPARRO GLORIFICADOR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">58</field>
+		<field name="name">WHITE WALL 20 FT GLORIFICADOR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">59</field>
+		<field name="name">SCULPT BAR (COMPARTIDO)</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">60</field>
+		<field name="name">COLUMNA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">61</field>
+		<field name="name">COLUMNA MAKE IT HAPPEN</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">62</field>
+		<field name="name">COLUMNA SANTA FE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">63</field>
+		<field name="name">GONDOLA MAKE UP</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">64</field>
+		<field name="name">GÓNDOLA BÁSICA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">65</field>
+		<field name="name">GÓNDOLA PREMIUM</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">66</field>
+		<field name="name">TORRE GIRATORIA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">67</field>
+		<field name="name">VOGUE .60</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">68</field>
+		<field name="name">MUEBLE 1.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">69</field>
+		<field name="name">MUEBLE 1.80</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">70</field>
+		<field name="name">DEEP TRADE 1.35</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">71</field>
+		<field name="name">DEEP TRADE 1.70</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">72</field>
+		<field name="name">DEEP TRADE 2.20</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">73</field>
+		<field name="name">PERFOCEL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">74</field>
+		<field name="name">PERFOCEL .55</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">75</field>
+		<field name="name">PERFOCEL .75</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">76</field>
+		<field name="name">PERFOCEL .80</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">77</field>
+		<field name="name">PERFOCEL 1.0M</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">78</field>
+		<field name="name">RACK PREMIUM 120X6</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">79</field>
+		<field name="name">RACK PREMIUM 120X6 DOBLE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">80</field>
+		<field name="name">RACK PREMIUM 120X5</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">81</field>
+		<field name="name">RACK PREMIUM 120X4</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">82</field>
+		<field name="name">RACK PREMIUM 120X4 DOBLE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">83</field>
+		<field name="name">RACK PREMIUM 80X6</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">84</field>
+		<field name="name">RACK PREMIUM 80X5</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">85</field>
+		<field name="name">DERMO RACK 6N</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">86</field>
+		<field name="name">DERMO RACK 5N</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">87</field>
+		<field name="name">DERMO RACK 4N</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">88</field>
+		<field name="name">DERMO RACK 6N 2018</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">89</field>
+		<field name="name">DERMO RACK 5N 2018</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">90</field>
+		<field name="name">SKIN LAB DERMO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">91</field>
+		<field name="name">DERMO RACK 6N ILUSION</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">92</field>
+		<field name="name">TORRE DERMO ILUSION</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">93</field>
+		<field name="name">RACK PREMIUM FACE 120X4</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">94</field>
+		<field name="name">RACK PREMIUM FACE 120X5</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">95</field>
+		<field name="name">RACK PREMIUM FACE 120X6</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">96</field>
+		<field name="name">RACK PREMIUM FACE 80X5</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">97</field>
+		<field name="name">RACK PREMIUM FACE 80X6</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">98</field>
+		<field name="name">RACK FACE 120X4</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">99</field>
+		<field name="name">RACK FACE 120X5</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">100</field>
+		<field name="name">RACK FACE 120X6N 2018</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">101</field>
+		<field name="name">PERIMETRAL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">102</field>
+		<field name="name">GRAB &amp; GO</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">103</field>
+		<field name="name">BEAUTY BAR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">104</field>
+		<field name="name">CASH WRAP</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">105</field>
+		<field name="name">WHAT'S NEW</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">106</field>
+		<field name="name">GONDOLAS PERIMETRALES</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">107</field>
+		<field name="name">SETS &amp; BAGS</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">108</field>
+		<field name="name">BRUSH BAR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">109</field>
+		<field name="name">NICHO DE PARED</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">110</field>
+		<field name="name">CAJAS DE LUZ COLUMNA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">111</field>
+		<field name="name">CABECERA FIRST LOOK</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">112</field>
+		<field name="name">GÓNDOLA LIVERPOOL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">113</field>
+		<field name="name">SHOPPING BASKET</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">114</field>
+		<field name="name">WALL DAX</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">115</field>
+		<field name="name">CABECERA PRO BAR DAX</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">116</field>
+		<field name="name">PERIMETRAL LIVERPOOL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">117</field>
+		<field name="name">TORRE LIVERPOOL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">118</field>
+		<field name="name">BANCO BEAUTY BAR</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">119</field>
+		<field name="name">PHARMA PLUS 3 TRAMOS LOREAL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">120</field>
+		<field name="name">PHARMA PLUS 3 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">121</field>
+		<field name="name">PHARMA PLUS 5&amp;6 TRAMOS LOREAL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">122</field>
+		<field name="name">PHARMA PLUS 5 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">123</field>
+		<field name="name">PHARMA PLUS 6 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">124</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE ALTO 3 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">125</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE ALTO 3 TRAMOS LOREAL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">126</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE ALTO 4 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">127</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE ALTO 4 TRAMOS LOREAL</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">128</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE BAJO 3 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">129</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE BAJO 3 TRAMOS VOGUE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">130</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE BAJO 4 TRAMOS MAYBELLINE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">131</field>
+		<field name="name">CLEAN&amp;BRIGHT NSE BAJO 4 TRAMOS VOGUE</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">132</field>
+		<field name="name">ISLA</field>
+		<field name="description" xsi:nil="true" />
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_lines">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_lines" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_lines" Non_unique="0" Key_name="lines_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_lines" Engine="InnoDB" Version="10" Row_format="Compact" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="5" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_lines">
+	<row>
+		<field name="id">1</field>
+		<field name="name">CONSUMO</field>
+		<field name="code">02</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">LUJO</field>
+		<field name="code">03</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">COSMETICA ACTIVA</field>
+		<field name="code">04</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="name">OTRA</field>
+		<field name="code">XX</field>
+		<field name="reg_created_dt" xsi:nil="true" />
+		<field name="reg_updated_dt" xsi:nil="true" />
+		<field name="reg_status">1</field>
+	</row>
+	</table_data>
+	<table_structure name="s10_states">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="code" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_states" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_states" Non_unique="0" Key_name="states_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_states" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_states">
+	</table_data>
+	<table_structure name="s10_stores">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="city_name" Type="varchar(255)" Null="NO" Key="MUL" Default="" Extra="" Comment="" />
+		<field Field="address" Type="text" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="postal_code" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="schedule" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="type" Type="varchar(50)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<field Field="sap_code" Type="varchar(50)" Null="NO" Key="MUL" Default="" Extra="" Comment="" />
+		<field Field="state_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="chain_store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<key Table="s10_stores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_type" Seq_in_index="1" Column_name="type" Collation="A" Cardinality="0" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_state_id" Seq_in_index="1" Column_name="state_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_chain_store_id" Seq_in_index="1" Column_name="chain_store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_city_name" Seq_in_index="1" Column_name="city_name" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_sap_code" Seq_in_index="1" Column_name="sap_code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="81920" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s10_stores">
+	</table_data>
+	<table_structure name="s20_brands_furniture_types">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="brand_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="furniture_type_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="146" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="0" Key_name="bft_uidx_brand_id_furniture_type_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="29" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="0" Key_name="bft_uidx_brand_id_furniture_type_id" Seq_in_index="2" Column_name="furniture_type_id" Collation="A" Cardinality="146" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="1" Key_name="bft_idx_brand_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="29" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_brands_furniture_types" Non_unique="1" Key_name="bft_idx_furniture_type_id" Seq_in_index="1" Column_name="furniture_type_id" Collation="A" Cardinality="146" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s20_brands_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="146" Avg_row_length="112" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="147" Create_time="2019-01-06 19:58:43" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s20_brands_furniture_types">
+	<row>
+		<field name="id">100</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">93</field>
+	</row>
+	<row>
+		<field name="id">101</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">94</field>
+	</row>
+	<row>
+		<field name="id">102</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">95</field>
+	</row>
+	<row>
+		<field name="id">103</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">96</field>
+	</row>
+	<row>
+		<field name="id">104</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">97</field>
+	</row>
+	<row>
+		<field name="id">105</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">98</field>
+	</row>
+	<row>
+		<field name="id">106</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">99</field>
+	</row>
+	<row>
+		<field name="id">107</field>
+		<field name="brand_id">1</field>
+		<field name="furniture_type_id">100</field>
+	</row>
+	<row>
+		<field name="id">117</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">60</field>
+	</row>
+	<row>
+		<field name="id">108</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">101</field>
+	</row>
+	<row>
+		<field name="id">109</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">102</field>
+	</row>
+	<row>
+		<field name="id">110</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">103</field>
+	</row>
+	<row>
+		<field name="id">111</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">104</field>
+	</row>
+	<row>
+		<field name="id">112</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">105</field>
+	</row>
+	<row>
+		<field name="id">113</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">106</field>
+	</row>
+	<row>
+		<field name="id">114</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">107</field>
+	</row>
+	<row>
+		<field name="id">115</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">108</field>
+	</row>
+	<row>
+		<field name="id">116</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">109</field>
+	</row>
+	<row>
+		<field name="id">118</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">110</field>
+	</row>
+	<row>
+		<field name="id">119</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">111</field>
+	</row>
+	<row>
+		<field name="id">120</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">112</field>
+	</row>
+	<row>
+		<field name="id">121</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">113</field>
+	</row>
+	<row>
+		<field name="id">122</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">114</field>
+	</row>
+	<row>
+		<field name="id">123</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">115</field>
+	</row>
+	<row>
+		<field name="id">124</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">116</field>
+	</row>
+	<row>
+		<field name="id">125</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">117</field>
+	</row>
+	<row>
+		<field name="id">126</field>
+		<field name="brand_id">2</field>
+		<field name="furniture_type_id">118</field>
+	</row>
+	<row>
+		<field name="id">127</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">119</field>
+	</row>
+	<row>
+		<field name="id">128</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">120</field>
+	</row>
+	<row>
+		<field name="id">129</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">121</field>
+	</row>
+	<row>
+		<field name="id">130</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">122</field>
+	</row>
+	<row>
+		<field name="id">131</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">123</field>
+	</row>
+	<row>
+		<field name="id">132</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">124</field>
+	</row>
+	<row>
+		<field name="id">133</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">125</field>
+	</row>
+	<row>
+		<field name="id">134</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">126</field>
+	</row>
+	<row>
+		<field name="id">135</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">127</field>
+	</row>
+	<row>
+		<field name="id">136</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">128</field>
+	</row>
+	<row>
+		<field name="id">137</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">129</field>
+	</row>
+	<row>
+		<field name="id">138</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">130</field>
+	</row>
+	<row>
+		<field name="id">139</field>
+		<field name="brand_id">3</field>
+		<field name="furniture_type_id">131</field>
+	</row>
+	<row>
+		<field name="id">1</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">2</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">3</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">4</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">5</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">6</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">7</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">8</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">9</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">10</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">11</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">12</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">13</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">14</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">15</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">16</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">17</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">18</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">19</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">20</field>
+	</row>
+	<row>
+		<field name="id">21</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">21</field>
+	</row>
+	<row>
+		<field name="id">22</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">22</field>
+	</row>
+	<row>
+		<field name="id">23</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">23</field>
+	</row>
+	<row>
+		<field name="id">24</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">24</field>
+	</row>
+	<row>
+		<field name="id">25</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">25</field>
+	</row>
+	<row>
+		<field name="id">26</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">26</field>
+	</row>
+	<row>
+		<field name="id">27</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">27</field>
+	</row>
+	<row>
+		<field name="id">59</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">59</field>
+	</row>
+	<row>
+		<field name="id">61</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">60</field>
+	</row>
+	<row>
+		<field name="id">63</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">61</field>
+	</row>
+	<row>
+		<field name="id">65</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">62</field>
+	</row>
+	<row>
+		<field name="id">67</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">63</field>
+	</row>
+	<row>
+		<field name="id">69</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">64</field>
+	</row>
+	<row>
+		<field name="id">71</field>
+		<field name="brand_id">4</field>
+		<field name="furniture_type_id">65</field>
+	</row>
+	<row>
+		<field name="id">85</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">78</field>
+	</row>
+	<row>
+		<field name="id">86</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">79</field>
+	</row>
+	<row>
+		<field name="id">87</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">80</field>
+	</row>
+	<row>
+		<field name="id">88</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">81</field>
+	</row>
+	<row>
+		<field name="id">89</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">82</field>
+	</row>
+	<row>
+		<field name="id">90</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">83</field>
+	</row>
+	<row>
+		<field name="id">91</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">84</field>
+	</row>
+	<row>
+		<field name="id">92</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">85</field>
+	</row>
+	<row>
+		<field name="id">93</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">86</field>
+	</row>
+	<row>
+		<field name="id">94</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">87</field>
+	</row>
+	<row>
+		<field name="id">95</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">88</field>
+	</row>
+	<row>
+		<field name="id">96</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">89</field>
+	</row>
+	<row>
+		<field name="id">97</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">90</field>
+	</row>
+	<row>
+		<field name="id">98</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">91</field>
+	</row>
+	<row>
+		<field name="id">99</field>
+		<field name="brand_id">5</field>
+		<field name="furniture_type_id">92</field>
+	</row>
+	<row>
+		<field name="id">28</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">28</field>
+	</row>
+	<row>
+		<field name="id">29</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">29</field>
+	</row>
+	<row>
+		<field name="id">30</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">30</field>
+	</row>
+	<row>
+		<field name="id">31</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">31</field>
+	</row>
+	<row>
+		<field name="id">32</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">32</field>
+	</row>
+	<row>
+		<field name="id">33</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">33</field>
+	</row>
+	<row>
+		<field name="id">34</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">34</field>
+	</row>
+	<row>
+		<field name="id">35</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">35</field>
+	</row>
+	<row>
+		<field name="id">36</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">36</field>
+	</row>
+	<row>
+		<field name="id">37</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">37</field>
+	</row>
+	<row>
+		<field name="id">38</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">38</field>
+	</row>
+	<row>
+		<field name="id">39</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">39</field>
+	</row>
+	<row>
+		<field name="id">40</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">40</field>
+	</row>
+	<row>
+		<field name="id">41</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">41</field>
+	</row>
+	<row>
+		<field name="id">42</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">42</field>
+	</row>
+	<row>
+		<field name="id">43</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">43</field>
+	</row>
+	<row>
+		<field name="id">44</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">44</field>
+	</row>
+	<row>
+		<field name="id">45</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">45</field>
+	</row>
+	<row>
+		<field name="id">46</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">46</field>
+	</row>
+	<row>
+		<field name="id">47</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">47</field>
+	</row>
+	<row>
+		<field name="id">48</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">48</field>
+	</row>
+	<row>
+		<field name="id">49</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">49</field>
+	</row>
+	<row>
+		<field name="id">50</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">50</field>
+	</row>
+	<row>
+		<field name="id">51</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">51</field>
+	</row>
+	<row>
+		<field name="id">52</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">52</field>
+	</row>
+	<row>
+		<field name="id">53</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">53</field>
+	</row>
+	<row>
+		<field name="id">54</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">54</field>
+	</row>
+	<row>
+		<field name="id">55</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">55</field>
+	</row>
+	<row>
+		<field name="id">56</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">56</field>
+	</row>
+	<row>
+		<field name="id">57</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">57</field>
+	</row>
+	<row>
+		<field name="id">58</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">58</field>
+	</row>
+	<row>
+		<field name="id">60</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">59</field>
+	</row>
+	<row>
+		<field name="id">62</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">60</field>
+	</row>
+	<row>
+		<field name="id">64</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">61</field>
+	</row>
+	<row>
+		<field name="id">66</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">62</field>
+	</row>
+	<row>
+		<field name="id">68</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">63</field>
+	</row>
+	<row>
+		<field name="id">70</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">64</field>
+	</row>
+	<row>
+		<field name="id">72</field>
+		<field name="brand_id">6</field>
+		<field name="furniture_type_id">65</field>
+	</row>
+	<row>
+		<field name="id">73</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">66</field>
+	</row>
+	<row>
+		<field name="id">74</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">67</field>
+	</row>
+	<row>
+		<field name="id">75</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">68</field>
+	</row>
+	<row>
+		<field name="id">76</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">69</field>
+	</row>
+	<row>
+		<field name="id">77</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">70</field>
+	</row>
+	<row>
+		<field name="id">78</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">71</field>
+	</row>
+	<row>
+		<field name="id">79</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">72</field>
+	</row>
+	<row>
+		<field name="id">80</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">73</field>
+	</row>
+	<row>
+		<field name="id">81</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">74</field>
+	</row>
+	<row>
+		<field name="id">82</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">75</field>
+	</row>
+	<row>
+		<field name="id">83</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">76</field>
+	</row>
+	<row>
+		<field name="id">84</field>
+		<field name="brand_id">7</field>
+		<field name="furniture_type_id">77</field>
+	</row>
+	<row>
+		<field name="id">140</field>
+		<field name="brand_id">8</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	<row>
+		<field name="id">141</field>
+		<field name="brand_id">9</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	<row>
+		<field name="id">142</field>
+		<field name="brand_id">10</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	<row>
+		<field name="id">143</field>
+		<field name="brand_id">11</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	<row>
+		<field name="id">144</field>
+		<field name="brand_id">12</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	<row>
+		<field name="id">145</field>
+		<field name="brand_id">13</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	<row>
+		<field name="id">146</field>
+		<field name="brand_id">14</field>
+		<field name="furniture_type_id">132</field>
+	</row>
+	</table_data>
+	<table_structure name="s20_stores_brands">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="brand_id" Type="bigint(20)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="s20_stores_brands" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="2" Column_name="brand_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s20_stores_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s20_stores_brands">
+	</table_data>
+	<table_structure name="s20_stores_clerks">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="clerk_id" Type="bigint(20)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="s20_stores_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="2" Column_name="clerk_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s20_stores_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:04" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s20_stores_clerks">
+	</table_data>
+	<table_structure name="s30_inventory_codes">
+		<field Field="id" Type="int(10) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="code" Type="varchar(8)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<key Table="s30_inventory_codes" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_codes" Non_unique="0" Key_name="inventory_codes_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s30_inventory_codes" Engine="MyISAM" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="0" Max_data_length="281474976710655" Index_length="1024" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:37" Update_time="2019-01-06 19:37:37" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s30_inventory_codes">
+	</table_data>
+	<table_structure name="s30_inventory_evidence_photos">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="file_path" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="type" Type="tinyint(4)" Null="NO" Key="" Extra="" Comment="0 =&gt; UNKNOWN
+1 =&gt; FURNITURE
+2 =&gt; QR" />
+		<field Field="inventory_evidence_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="2" Column_name="type" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidence_photos" Non_unique="1" Key_name="iep_idx_inventory_evidence_id" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s30_inventory_evidence_photos" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:05" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s30_inventory_evidence_photos">
+	</table_data>
+	<table_structure name="s30_inventory_evidences">
+		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="code" Type="varchar(255)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="brand_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="furniture_type_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="clerk_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="user_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
+		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
+1 =&gt; ACTIVE" />
+		<field Field="comments" Type="text" Null="YES" Key="" Extra="" Comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="0" Key_name="ie_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_store_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_brand_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_furniture_type_id" Seq_in_index="1" Column_name="furniture_type_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_user_id" Seq_in_index="1" Column_name="user_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s30_inventory_evidences" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="98304" Data_free="0" Auto_increment="1" Create_time="2019-01-06 19:37:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+	</table_structure>
+	<table_data name="s30_inventory_evidences">
+	</table_data>
+</database>
+</mysqldump>

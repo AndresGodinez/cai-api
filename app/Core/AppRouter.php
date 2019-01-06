@@ -9,6 +9,7 @@
 namespace App\Core;
 
 use App\Api\AuthApiView;
+use App\Api\Brand\BrandFurnitureTypeListApiView;
 use App\Api\Brand\BrandListApiView;
 use App\Api\Clerk\ClerkCaptureStatisticsApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
@@ -77,6 +78,10 @@ class AppRouter
 
         $r = $route->get('/api/brand/list', BrandListApiView::class);
         $r->setName('brand-list-route');
+        $r->middleware($secureApiMiddleware);
+
+        $r = $route->get('/api/brand/{regId:regId}/furniture-type/list', BrandFurnitureTypeListApiView::class);
+        $r->setName('brand-furniture-type-list-route');
         $r->middleware($secureApiMiddleware);
 
         $r = $route->get('/api/furniture-type/list', FurnitureTypeListApiView::class);

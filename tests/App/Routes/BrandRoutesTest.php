@@ -37,4 +37,18 @@ class BrandRoutesTest extends TestCase
         $this->assertEquals('/api/brand/list', $route->getPath());
         $this->assertEquals('GET', $route->getMethod());
     }
+
+    public function testAppRouterContainsBrandFurnitureTypeListRoute()
+    {
+        $container = AppContainer::make(BASE_DIR);
+
+        /** @var Router $inst */
+        $inst = $container->get('router');
+
+        $route = $inst->getNamedRoute('brand-furniture-type-list-route');
+
+        $this->assertNotNull($route);
+        $this->assertEquals('/api/brand/{regId:regId}/furniture-type/list', $route->getPath());
+        $this->assertEquals('GET', $route->getMethod());
+    }
 }

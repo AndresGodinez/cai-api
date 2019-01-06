@@ -8,6 +8,7 @@
 
 namespace App\Core\ContainerProviders;
 
+use App\Api\Brand\BrandFurnitureTypeListApiView;
 use App\Api\Brand\BrandListApiView;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 
@@ -18,7 +19,8 @@ use League\Container\ServiceProvider\AbstractServiceProvider;
 class BrandApiProvider extends AbstractServiceProvider
 {
     protected $provides = [
-        BrandListApiView::class
+        BrandListApiView::class,
+        BrandFurnitureTypeListApiView::class,
     ];
 
     /**
@@ -32,6 +34,11 @@ class BrandApiProvider extends AbstractServiceProvider
     {
         $this->container
             ->add(BrandListApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(BrandFurnitureTypeListApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
     }
