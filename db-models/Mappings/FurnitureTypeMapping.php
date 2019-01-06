@@ -35,11 +35,6 @@ class FurnitureTypeMapping
         $builder->createField('name', 'string')->length(255)->build();
         $builder->createField('description', 'string')->nullable()->build();
 
-        $builder->createManyToOne('brand', Brand::class)
-            ->addJoinColumn('brand_id', 'id')
-            ->cascadeAll()
-            ->build();
-
         ClassMetadataUtils::poblateMetadataWithBaseEntityFields($builder);
     }
 }

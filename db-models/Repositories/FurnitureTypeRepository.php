@@ -24,5 +24,4 @@ class FurnitureTypeRepository extends EntityRepository
     {
         return $this->findBy(['regStatus' => DefaultEntityRegStatus::ACTIVE]);
     }
-
 }

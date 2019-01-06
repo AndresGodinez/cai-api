@@ -4,7 +4,7 @@
 	<table_structure name="db_versions">
 		<field Field="version" Type="varchar(255)" Null="NO" Key="PRI" Extra="" Comment="" />
 		<key Table="db_versions" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="version" Collation="A" Cardinality="16" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="db_versions" Engine="InnoDB" Version="10" Row_format="Compact" Rows="16" Avg_row_length="1024" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2019-01-04 16:35:06" Collation="utf8_unicode_ci" Create_options="" Comment="" />
+		<options Name="db_versions" Engine="InnoDB" Version="10" Row_format="Compact" Rows="16" Avg_row_length="1024" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Create_time="2019-01-04 18:06:16" Collation="utf8_unicode_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="db_versions">
 	<row>
@@ -71,7 +71,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s00_users" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="34" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s00_users" Non_unique="1" Key_name="users_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="34" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s00_users" Engine="InnoDB" Version="10" Row_format="Compact" Rows="34" Avg_row_length="481" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="35" Create_time="2019-01-04 16:35:06" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s00_users" Engine="InnoDB" Version="10" Row_format="Compact" Rows="34" Avg_row_length="481" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="35" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s00_users">
 	<row>
@@ -462,7 +462,7 @@
 		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="10" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_brands" Non_unique="0" Key_name="brands_uidx_code_line_id" Seq_in_index="2" Column_name="code" Collation="A" Cardinality="20" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_brands" Non_unique="1" Key_name="brands_idx_line_id" Seq_in_index="1" Column_name="line_id" Collation="A" Cardinality="10" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="20" Avg_row_length="819" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="21" Create_time="2019-01-04 16:35:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="20" Avg_row_length="819" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="21" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_brands">
 	<row>
@@ -654,7 +654,7 @@
 		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
 1 =&gt; ACTIVE" />
 		<key Table="s10_chain_stores" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="30" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_chain_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="30" Avg_row_length="546" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="31" Create_time="2019-01-04 16:35:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_chain_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="30" Avg_row_length="546" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="31" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_chain_stores">
 	<row>
@@ -878,7 +878,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s10_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="33" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_clerks" Non_unique="0" Key_name="clerks_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="33" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="33" Avg_row_length="496" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="34" Create_time="2019-01-04 16:35:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="33" Avg_row_length="496" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="34" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_clerks">
 	<row>
@@ -1155,7 +1155,7 @@
 		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
 1 =&gt; ACTIVE" />
 		<key Table="s10_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="146" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="146" Avg_row_length="112" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="147" Create_time="2019-01-04 16:35:07" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="146" Avg_row_length="112" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="147" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_furniture_types">
 	<row>
@@ -2337,7 +2337,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s10_lines" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_lines" Non_unique="0" Key_name="lines_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_lines" Engine="InnoDB" Version="10" Row_format="Compact" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="5" Create_time="2019-01-04 16:35:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_lines" Engine="InnoDB" Version="10" Row_format="Compact" Rows="4" Avg_row_length="4096" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="5" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_lines">
 	<row>
@@ -2383,7 +2383,7 @@
 1 =&gt; ACTIVE" />
 		<key Table="s10_states" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="32" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_states" Non_unique="0" Key_name="states_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="32" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_states" Engine="InnoDB" Version="10" Row_format="Compact" Rows="32" Avg_row_length="512" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="33" Create_time="2019-01-04 16:35:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s10_states" Engine="InnoDB" Version="10" Row_format="Compact" Rows="32" Avg_row_length="512" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="33" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_states">
 	<row>
@@ -2651,6 +2651,7 @@
 		<field Field="postal_code" Type="varchar(30)" Null="YES" Key="" Extra="" Comment="" />
 		<field Field="schedule" Type="varchar(50)" Null="YES" Key="" Extra="" Comment="" />
 		<field Field="type" Type="varchar(50)" Null="YES" Key="MUL" Extra="" Comment="" />
+		<field Field="sap_code" Type="varchar(50)" Null="NO" Key="MUL" Default="" Extra="" Comment="" />
 		<field Field="state_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="chain_store_id" Type="bigint(20)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
@@ -2662,7 +2663,8 @@
 		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_state_id" Seq_in_index="1" Column_name="state_id" Collation="A" Cardinality="14" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_chain_store_id" Seq_in_index="1" Column_name="chain_store_id" Collation="A" Cardinality="37" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_city_name" Seq_in_index="1" Column_name="city_name" Collation="A" Cardinality="150" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s10_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="300" Avg_row_length="218" Data_length="65536" Max_data_length="0" Index_length="65536" Data_free="0" Auto_increment="2235" Create_time="2019-01-04 16:35:08" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<key Table="s10_stores" Non_unique="1" Key_name="stores_idx_sap_code" Seq_in_index="1" Column_name="sap_code" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="s10_stores" Engine="InnoDB" Version="10" Row_format="Compact" Rows="300" Avg_row_length="273" Data_length="81920" Max_data_length="0" Index_length="81920" Data_free="0" Auto_increment="2235" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_stores">
 	<row>
@@ -2673,6 +2675,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">8</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2687,6 +2690,7 @@
 		<field name="postal_code">63170</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">8</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2701,6 +2705,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">8</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2715,6 +2720,7 @@
 		<field name="postal_code">63060</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">8</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2729,6 +2735,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">8</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2743,6 +2750,7 @@
 		<field name="postal_code">63030</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">8</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2757,6 +2765,7 @@
 		<field name="postal_code">86150</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2771,6 +2780,7 @@
 		<field name="postal_code">86150</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2785,6 +2795,7 @@
 		<field name="postal_code">18403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2799,6 +2810,7 @@
 		<field name="postal_code">52994</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2813,6 +2825,7 @@
 		<field name="postal_code">52994</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2827,6 +2840,7 @@
 		<field name="postal_code">63732</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2841,6 +2855,7 @@
 		<field name="postal_code">63732</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2855,6 +2870,7 @@
 		<field name="postal_code">86500</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2869,6 +2885,7 @@
 		<field name="postal_code">16103</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2883,6 +2900,7 @@
 		<field name="postal_code">86706</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2897,6 +2915,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2911,6 +2930,7 @@
 		<field name="postal_code">63735</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2925,6 +2945,7 @@
 		<field name="postal_code">86605</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2939,6 +2960,7 @@
 		<field name="postal_code">86605</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2953,6 +2975,7 @@
 		<field name="postal_code">52780</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2967,6 +2990,7 @@
 		<field name="postal_code">86000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2981,6 +3005,7 @@
 		<field name="postal_code">86100</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -2995,6 +3020,7 @@
 		<field name="postal_code">86038</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3009,6 +3035,7 @@
 		<field name="postal_code">86030</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3023,6 +3050,7 @@
 		<field name="postal_code">86010</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3037,6 +3065,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3051,6 +3080,7 @@
 		<field name="postal_code">63176</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3065,6 +3095,7 @@
 		<field name="postal_code">56430</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3079,6 +3110,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3093,6 +3125,7 @@
 		<field name="postal_code">86038</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">9</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3107,6 +3140,7 @@
 		<field name="postal_code">63732</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3121,6 +3155,7 @@
 		<field name="postal_code">54930</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3135,6 +3170,7 @@
 		<field name="postal_code">63732</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3149,6 +3185,7 @@
 		<field name="postal_code">52765</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">COSMETICA ACTIVA</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3163,6 +3200,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3177,6 +3215,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3191,6 +3230,7 @@
 		<field name="postal_code">42850</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3205,6 +3245,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3219,6 +3260,7 @@
 		<field name="postal_code">52786</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3233,6 +3275,7 @@
 		<field name="postal_code">63732</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3247,6 +3290,7 @@
 		<field name="postal_code">86100</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3261,6 +3305,7 @@
 		<field name="postal_code">86100</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3275,6 +3320,7 @@
 		<field name="postal_code">50450</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3289,6 +3335,7 @@
 		<field name="postal_code">20116</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3303,6 +3350,7 @@
 		<field name="postal_code">52140</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3317,6 +3365,7 @@
 		<field name="postal_code">42083</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3331,6 +3380,7 @@
 		<field name="postal_code">50090</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3345,6 +3395,7 @@
 		<field name="postal_code">43649</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3359,6 +3410,7 @@
 		<field name="postal_code">50090</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3373,6 +3425,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">12</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3387,6 +3440,7 @@
 		<field name="postal_code">90347</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">18</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3401,6 +3455,7 @@
 		<field name="postal_code">20280</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">18</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3415,6 +3470,7 @@
 		<field name="postal_code">63000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">18</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3429,6 +3485,7 @@
 		<field name="postal_code">20126</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">10</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3443,6 +3500,7 @@
 		<field name="postal_code">20196</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">10</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3457,6 +3515,7 @@
 		<field name="postal_code">50130</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">10</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3471,6 +3530,7 @@
 		<field name="postal_code">20198</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">10</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3485,6 +3545,7 @@
 		<field name="postal_code">63175</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">10</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3499,6 +3560,7 @@
 		<field name="postal_code">86500</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3513,6 +3575,7 @@
 		<field name="postal_code">86300</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3527,6 +3590,7 @@
 		<field name="postal_code">63950</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3541,6 +3605,7 @@
 		<field name="postal_code">56400</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3555,6 +3620,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3569,6 +3635,7 @@
 		<field name="postal_code">90800</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3583,6 +3650,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3597,6 +3665,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3611,6 +3680,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3625,6 +3695,7 @@
 		<field name="postal_code">86000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3639,6 +3710,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">5</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3653,6 +3725,7 @@
 		<field name="postal_code">42840</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">14</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3667,6 +3740,7 @@
 		<field name="postal_code">52169</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">14</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3681,6 +3755,7 @@
 		<field name="postal_code">42730</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">14</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3695,6 +3770,7 @@
 		<field name="postal_code">20200</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3709,6 +3785,7 @@
 		<field name="postal_code">99014</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3723,6 +3800,7 @@
 		<field name="postal_code">52140</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3737,6 +3815,7 @@
 		<field name="postal_code">86035</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3751,6 +3830,7 @@
 		<field name="postal_code">50160</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3765,6 +3845,7 @@
 		<field name="postal_code">98040</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3779,6 +3860,7 @@
 		<field name="postal_code">52140</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3793,6 +3875,7 @@
 		<field name="postal_code">20200</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3807,6 +3890,7 @@
 		<field name="postal_code">55635</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3821,6 +3905,7 @@
 		<field name="postal_code">52787</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3835,6 +3920,7 @@
 		<field name="postal_code">52141</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3849,6 +3935,7 @@
 		<field name="postal_code">42080</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3863,6 +3950,7 @@
 		<field name="postal_code">63175</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3877,6 +3965,7 @@
 		<field name="postal_code">90111</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3891,6 +3980,7 @@
 		<field name="postal_code">50160</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3905,6 +3995,7 @@
 		<field name="postal_code">86035</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3919,6 +4010,7 @@
 		<field name="postal_code">86190</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3933,6 +4025,7 @@
 		<field name="postal_code">98040</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3947,6 +4040,7 @@
 		<field name="postal_code">55635</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3961,6 +4055,7 @@
 		<field name="postal_code">42080</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3975,6 +4070,7 @@
 		<field name="postal_code">52787</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -3989,6 +4085,7 @@
 		<field name="postal_code">63175</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4003,6 +4100,7 @@
 		<field name="postal_code">90111</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4017,6 +4115,7 @@
 		<field name="postal_code">86190</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">7</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4031,6 +4130,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4045,6 +4145,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4059,6 +4160,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4073,6 +4175,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4087,6 +4190,7 @@
 		<field name="postal_code">50450</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4101,6 +4205,7 @@
 		<field name="postal_code">90200</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4115,6 +4220,7 @@
 		<field name="postal_code">86500</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4129,6 +4235,7 @@
 		<field name="postal_code">42840</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4143,6 +4250,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4157,6 +4265,7 @@
 		<field name="postal_code">86300</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4171,6 +4280,7 @@
 		<field name="postal_code">86126</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4186,6 +4296,7 @@
 		<field name="postal_code">20198</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4200,6 +4311,7 @@
 		<field name="postal_code">20198</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4214,6 +4326,7 @@
 		<field name="postal_code">86000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4228,6 +4341,7 @@
 		<field name="postal_code">43000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4242,6 +4356,7 @@
 		<field name="postal_code">63950</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4256,6 +4371,7 @@
 		<field name="postal_code">56420</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4270,6 +4386,7 @@
 		<field name="postal_code">55812</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4284,6 +4401,7 @@
 		<field name="postal_code">90800</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4298,6 +4416,7 @@
 		<field name="postal_code">20120</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4312,6 +4431,7 @@
 		<field name="postal_code">52779</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4326,6 +4446,7 @@
 		<field name="postal_code">98085</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4340,6 +4461,7 @@
 		<field name="postal_code">52784</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4354,6 +4476,7 @@
 		<field name="postal_code">20235</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4368,6 +4491,7 @@
 		<field name="postal_code">52170</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4382,6 +4506,7 @@
 		<field name="postal_code">86030</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4396,6 +4521,7 @@
 		<field name="postal_code">52169</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4410,6 +4536,7 @@
 		<field name="postal_code">63000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4424,6 +4551,7 @@
 		<field name="postal_code">43800</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4438,6 +4566,7 @@
 		<field name="postal_code">99700</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4452,6 +4581,7 @@
 		<field name="postal_code">52000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4466,6 +4596,7 @@
 		<field name="postal_code">50090</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4480,6 +4611,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4494,6 +4626,7 @@
 		<field name="postal_code">86000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4508,6 +4641,7 @@
 		<field name="postal_code">98000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">1</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4522,6 +4656,7 @@
 		<field name="postal_code">20236</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">27</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4536,6 +4671,7 @@
 		<field name="postal_code">20010</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">27</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4550,6 +4686,7 @@
 		<field name="postal_code">52787</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">17</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4564,6 +4701,7 @@
 		<field name="postal_code">52787</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">17</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4578,6 +4716,7 @@
 		<field name="postal_code">86190</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">17</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4592,6 +4731,7 @@
 		<field name="postal_code">86190</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">17</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4606,6 +4746,7 @@
 		<field name="postal_code">52784</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">16</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4620,6 +4761,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">13</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4634,6 +4776,7 @@
 		<field name="postal_code">42060</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">13</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4648,6 +4791,7 @@
 		<field name="postal_code">86030</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">13</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4662,6 +4806,7 @@
 		<field name="postal_code">9360</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">13</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4676,6 +4821,7 @@
 		<field name="postal_code">20200</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">13</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4690,6 +4836,7 @@
 		<field name="postal_code">98040</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4704,6 +4851,7 @@
 		<field name="postal_code">52787</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4718,6 +4866,7 @@
 		<field name="postal_code">86190</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4732,6 +4881,7 @@
 		<field name="postal_code">52140</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4746,6 +4896,7 @@
 		<field name="postal_code">42083</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4760,6 +4911,7 @@
 		<field name="postal_code">63175</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4774,6 +4926,7 @@
 		<field name="postal_code">42181</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4788,6 +4941,7 @@
 		<field name="postal_code">20116</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4802,6 +4956,7 @@
 		<field name="postal_code">20116</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4816,6 +4971,7 @@
 		<field name="postal_code">42083</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4830,6 +4986,7 @@
 		<field name="postal_code">63175</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4844,6 +5001,7 @@
 		<field name="postal_code">86190</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4858,6 +5016,7 @@
 		<field name="postal_code">98040</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">6</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4872,6 +5031,7 @@
 		<field name="postal_code">52764</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">15</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4886,6 +5046,7 @@
 		<field name="postal_code">52764</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">LUJO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">15</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4900,6 +5061,7 @@
 		<field name="postal_code">63157</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4914,6 +5076,7 @@
 		<field name="postal_code">20010</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4928,6 +5091,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4942,6 +5106,7 @@
 		<field name="postal_code">42080</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4956,6 +5121,7 @@
 		<field name="postal_code">63157</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4970,6 +5136,7 @@
 		<field name="postal_code">52000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4984,6 +5151,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -4998,6 +5166,7 @@
 		<field name="postal_code">18403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5012,6 +5181,7 @@
 		<field name="postal_code">90300</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5026,6 +5196,7 @@
 		<field name="postal_code">20010</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5040,6 +5211,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5054,6 +5226,7 @@
 		<field name="postal_code">20000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5068,6 +5241,7 @@
 		<field name="postal_code">98000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5082,6 +5256,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5096,6 +5271,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5110,6 +5286,7 @@
 		<field name="postal_code">99050</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5124,6 +5301,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5138,6 +5316,7 @@
 		<field name="postal_code">20198</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5152,6 +5331,7 @@
 		<field name="postal_code">18403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5166,6 +5346,7 @@
 		<field name="postal_code">90100</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5180,6 +5361,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5194,6 +5376,7 @@
 		<field name="postal_code">42080</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5208,6 +5391,7 @@
 		<field name="postal_code">86540</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5222,6 +5406,7 @@
 		<field name="postal_code">86630</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5236,6 +5421,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5250,6 +5436,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5264,6 +5451,7 @@
 		<field name="postal_code">86690</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5278,6 +5466,7 @@
 		<field name="postal_code">56370</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5292,6 +5481,7 @@
 		<field name="postal_code">86600</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5306,6 +5496,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5320,6 +5511,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5334,6 +5526,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5348,6 +5541,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5362,6 +5556,7 @@
 		<field name="postal_code">18403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5376,6 +5571,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5390,6 +5586,7 @@
 		<field name="postal_code">54987</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5404,6 +5601,7 @@
 		<field name="postal_code">54930</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5418,6 +5616,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5432,6 +5631,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5446,6 +5646,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">2</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5460,6 +5661,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5474,6 +5676,7 @@
 		<field name="postal_code">63059</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5488,6 +5691,7 @@
 		<field name="postal_code">63735</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5502,6 +5706,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5516,6 +5721,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5530,6 +5736,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5544,6 +5751,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5558,6 +5766,7 @@
 		<field name="postal_code">86700</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5572,6 +5781,7 @@
 		<field name="postal_code">86029</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5586,6 +5796,7 @@
 		<field name="postal_code">86073</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5600,6 +5811,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5614,6 +5826,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5628,6 +5841,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5642,6 +5856,7 @@
 		<field name="postal_code">86000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5656,6 +5871,7 @@
 		<field name="postal_code">63157</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5670,6 +5886,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5684,6 +5901,7 @@
 		<field name="postal_code">86090</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5698,6 +5916,7 @@
 		<field name="postal_code">86090</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5712,6 +5931,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5726,6 +5946,7 @@
 		<field name="postal_code">11603</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5740,6 +5961,7 @@
 		<field name="postal_code">11603</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5754,6 +5976,7 @@
 		<field name="postal_code">11603</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5768,6 +5991,7 @@
 		<field name="postal_code">16603</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5782,6 +6006,7 @@
 		<field name="postal_code">10091</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5796,6 +6021,7 @@
 		<field name="postal_code">50150</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5810,6 +6036,7 @@
 		<field name="postal_code">86140</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5824,6 +6051,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5838,6 +6066,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5852,6 +6081,7 @@
 		<field name="postal_code">86020</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5866,6 +6096,7 @@
 		<field name="postal_code">86020</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5880,6 +6111,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5894,6 +6126,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5908,6 +6141,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5922,6 +6156,7 @@
 		<field name="postal_code">12103</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5936,6 +6171,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5950,6 +6186,7 @@
 		<field name="postal_code">50000</field>
 		<field name="schedule">LIBRE</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">4</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5964,6 +6201,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5978,6 +6216,7 @@
 		<field name="postal_code">20205</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -5992,6 +6231,7 @@
 		<field name="postal_code">55635</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6006,6 +6246,7 @@
 		<field name="postal_code">55885</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6020,6 +6261,7 @@
 		<field name="postal_code">16303</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6034,6 +6276,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6048,6 +6291,7 @@
 		<field name="postal_code">20198</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6062,6 +6306,7 @@
 		<field name="postal_code">98085</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6076,6 +6321,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6090,6 +6336,7 @@
 		<field name="postal_code">90610</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6104,6 +6351,7 @@
 		<field name="postal_code">14403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6118,6 +6366,7 @@
 		<field name="postal_code">54890</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6132,6 +6381,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6146,6 +6396,7 @@
 		<field name="postal_code">52170</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6160,6 +6411,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6174,6 +6426,7 @@
 		<field name="postal_code">86100</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6188,6 +6441,7 @@
 		<field name="postal_code">52779</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6202,6 +6456,7 @@
 		<field name="postal_code">18003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6216,6 +6471,7 @@
 		<field name="postal_code">55800</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6230,6 +6486,7 @@
 		<field name="postal_code">86090</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6244,6 +6501,7 @@
 		<field name="postal_code">86357</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6258,6 +6516,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6272,6 +6531,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6286,6 +6546,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6300,6 +6561,7 @@
 		<field name="postal_code">18403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6314,6 +6576,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6328,6 +6591,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6342,6 +6606,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6356,6 +6621,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6370,6 +6636,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6384,6 +6651,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6398,6 +6666,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6412,6 +6681,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6426,6 +6696,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6440,6 +6711,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6454,6 +6726,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6468,6 +6741,7 @@
 		<field name="postal_code">56400</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6482,6 +6756,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6496,6 +6771,7 @@
 		<field name="postal_code">16203</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6510,6 +6786,7 @@
 		<field name="postal_code">12503</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6524,6 +6801,7 @@
 		<field name="postal_code">18003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6538,6 +6816,7 @@
 		<field name="postal_code">18403</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">29</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6552,6 +6831,7 @@
 		<field name="postal_code">56230</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6566,6 +6846,7 @@
 		<field name="postal_code">16003</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6580,6 +6861,7 @@
 		<field name="postal_code">86500</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6594,6 +6876,7 @@
 		<field name="postal_code">55600</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6608,6 +6891,7 @@
 		<field name="postal_code">86030</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6622,6 +6906,7 @@
 		<field name="postal_code">63732</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6636,6 +6921,7 @@
 		<field name="postal_code">52006</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6650,6 +6936,7 @@
 		<field name="postal_code">50150</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6664,6 +6951,7 @@
 		<field name="postal_code">20120</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6678,6 +6966,7 @@
 		<field name="postal_code">52784</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6692,6 +6981,7 @@
 		<field name="postal_code">42064</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">14</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6706,6 +6996,7 @@
 		<field name="postal_code">50130</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6720,6 +7011,7 @@
 		<field name="postal_code">86000</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">27</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6734,6 +7026,7 @@
 		<field name="postal_code">63157</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">18</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6748,6 +7041,7 @@
 		<field name="postal_code">56370</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6762,6 +7056,7 @@
 		<field name="postal_code">98064</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6776,6 +7071,7 @@
 		<field name="postal_code">98064</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">32</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6790,6 +7086,7 @@
 		<field name="postal_code">50200</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6804,6 +7101,7 @@
 		<field name="postal_code">51350</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6818,6 +7116,7 @@
 		<field name="postal_code">50071</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6832,6 +7131,7 @@
 		<field name="postal_code">50071</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">11</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6846,6 +7146,7 @@
 		<field name="postal_code">20198</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6860,6 +7161,7 @@
 		<field name="postal_code">20235</field>
 		<field name="schedule">MATUTINO</field>
 		<field name="type">CONSUMO</field>
+		<field name="sap_code"></field>
 		<field name="state_id">1</field>
 		<field name="chain_store_id">3</field>
 		<field name="reg_created_dt">2018-12-28 14:54:23</field>
@@ -6874,7 +7176,7 @@
 		<key Table="s20_stores_brands" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_brands" Non_unique="0" Key_name="sb_uidx_store_id_brand_id" Seq_in_index="2" Column_name="brand_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s20_stores_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-04 16:35:09" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s20_stores_brands" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s20_stores_brands">
 	</table_data>
@@ -6885,7 +7187,7 @@
 		<key Table="s20_stores_clerks" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="300" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="1" Column_name="store_id" Collation="A" Cardinality="300" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s20_stores_clerks" Non_unique="0" Key_name="sc_uidx_store_id_clerk_id" Seq_in_index="2" Column_name="clerk_id" Collation="A" Cardinality="300" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s20_stores_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="300" Avg_row_length="54" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="2235" Create_time="2019-01-04 16:35:09" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s20_stores_clerks" Engine="InnoDB" Version="10" Row_format="Compact" Rows="300" Avg_row_length="54" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="2235" Create_time="2019-01-06 03:22:22" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s20_stores_clerks">
 	<row>
@@ -8394,7 +8696,7 @@
 		<field Field="code" Type="varchar(8)" Null="NO" Key="UNI" Extra="" Comment="" />
 		<key Table="s30_inventory_codes" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_codes" Non_unique="0" Key_name="inventory_codes_uidx_code" Seq_in_index="1" Column_name="code" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s30_inventory_codes" Engine="MyISAM" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="0" Max_data_length="281474976710655" Index_length="1024" Data_free="0" Auto_increment="1" Create_time="2019-01-04 16:43:28" Update_time="2019-01-04 16:43:28" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s30_inventory_codes" Engine="MyISAM" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="0" Max_data_length="281474976710655" Index_length="1024" Data_free="0" Auto_increment="1" Create_time="2019-01-06 03:39:53" Update_time="2019-01-06 03:39:53" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s30_inventory_codes">
 	</table_data>
@@ -8409,7 +8711,7 @@
 		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidence_photos" Non_unique="0" Key_name="iep_uidx_inventory_evidence_type" Seq_in_index="2" Column_name="type" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidence_photos" Non_unique="1" Key_name="iep_idx_inventory_evidence_id" Seq_in_index="1" Column_name="inventory_evidence_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s30_inventory_evidence_photos" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-04 16:35:10" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s30_inventory_evidence_photos" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2019-01-06 03:22:23" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s30_inventory_evidence_photos">
 	</table_data>
@@ -8433,7 +8735,7 @@
 		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_furniture_type_id" Seq_in_index="1" Column_name="furniture_type_id" Collation="A" Cardinality="24" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_clerk_id" Seq_in_index="1" Column_name="clerk_id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
 		<key Table="s30_inventory_evidences" Non_unique="1" Key_name="ie_idx_user_id" Seq_in_index="1" Column_name="user_id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="s30_inventory_evidences" Engine="InnoDB" Version="10" Row_format="Compact" Rows="24" Avg_row_length="682" Data_length="16384" Max_data_length="0" Index_length="98304" Data_free="0" Auto_increment="39" Create_time="2019-01-04 16:35:10" Collation="utf8_general_ci" Create_options="" Comment="" />
+		<options Name="s30_inventory_evidences" Engine="InnoDB" Version="10" Row_format="Compact" Rows="24" Avg_row_length="682" Data_length="16384" Max_data_length="0" Index_length="98304" Data_free="0" Auto_increment="39" Create_time="2019-01-06 03:22:24" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s30_inventory_evidences">
 	<row>

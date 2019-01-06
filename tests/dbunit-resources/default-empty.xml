@@ -122,17 +122,16 @@
 		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
 		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="description" Type="text" Null="YES" Key="" Extra="" Comment="" />
-		<field Field="brand_id" Type="bigint(20)" Null="YES" Key="MUL" Extra="" Comment="" />
 		<field Field="reg_created_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
 		<field Field="reg_updated_dt" Type="datetime" Null="YES" Key="" Extra="" Comment="" />
 		<field Field="reg_status" Type="tinyint(4)" Null="NO" Key="" Default="1" Extra="" Comment="0 =&gt; INACTIVE
 1 =&gt; ACTIVE" />
 		<key Table="s10_furniture_types" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="s10_furniture_types" Non_unique="1" Key_name="furniture_types_idx_brand_id" Seq_in_index="1" Column_name="brand_id" Collation="A" Cardinality="0" Null="YES" Index_type="BTREE" Comment="" Index_comment="" />
 		<options Name="s10_furniture_types" Engine="InnoDB" Version="10" Row_format="Compact" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="1" Create_time="2019-01-02 22:49:02" Collation="utf8_general_ci" Create_options="" Comment="" />
 	</table_structure>
 	<table_data name="s10_furniture_types">
 	</table_data>
+
 	<table_structure name="s10_lines">
 		<field Field="id" Type="bigint(20) unsigned" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
 		<field Field="name" Type="varchar(255)" Null="NO" Key="" Extra="" Comment="" />

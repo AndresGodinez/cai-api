@@ -57,27 +57,15 @@ class FurnitureTypeEntityTest extends DbUnitTestCase
         $description = 'TEST';
         $now = new \DateTime();
 
-        $line = new Line();
-        $line->setName('TEST');
-        $line->setCode('TEST');
-
-        $brand = new Brand();
-        $brand->setName('TEST');
-        $brand->setCode('TEST');
-        $brand->setLine($line);
-
         $register = new FurnitureType();
         $register->setName($name);
         $register->setDescription($description);
-        $register->setBrand($brand);
         $register->setRegCreatedDt($now);
         $register->setRegUpdatedDt($now);
 
         $em->persist($register);
         $em->flush();
 
-        $this->assertTableRowCount('s10_lines', 1);
-        $this->assertTableRowCount('s10_brands', 1);
         $this->assertTableRowCount('s10_furniture_types', 1);
 
         /** @var Connection $conn */
@@ -89,7 +77,6 @@ class FurnitureTypeEntityTest extends DbUnitTestCase
                 'id' => $register->getId(),
                 'name' => $name,
                 'description' => $description,
-                'brand_id' => $brand->getId(),
                 'reg_created_dt' => $now->format('Y-m-d H:i:s'),
                 'reg_updated_dt' => $now->format('Y-m-d H:i:s'),
                 'reg_status' => DefaultEntityRegStatus::ACTIVE,
@@ -123,7 +110,6 @@ class FurnitureTypeEntityTest extends DbUnitTestCase
                 'id' => $register->getId(),
                 'name' => $name,
                 'description' => null,
-                'brand_id' => null,
                 'reg_created_dt' => null,
                 'reg_updated_dt' => null,
                 'reg_status' => DefaultEntityRegStatus::ACTIVE,

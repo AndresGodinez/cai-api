@@ -8,7 +8,6 @@
 
 namespace App\Api\InventoryEvidence;
 
-
 use App\Core\Config;
 use App\Factories\ResponseFactory;
 use const BASE_DIR;
@@ -20,8 +19,8 @@ use Psr\Http\Message\ServerRequestInterface;
 
 class GetInventoryEvidenceApiView
 {
-
     protected $config;
+
     protected $em;
 
     public function setConfig(Config $config): void
@@ -45,6 +44,5 @@ class GetInventoryEvidenceApiView
         $response->getBody()->write($data);
 
         return $response;
-
     }
 }

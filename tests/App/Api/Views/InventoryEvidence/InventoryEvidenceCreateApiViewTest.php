@@ -61,7 +61,7 @@ class InventoryEvidenceCreateApiViewTest extends DbUnitTestCase
         /** @var Router $router */
         $router = self::$container->get('router');
 
-        $code = 'TEST';
+        $code = '02010001';
         $comments = 'TEST';
         $storeId = 1;
         $brandId = 1;

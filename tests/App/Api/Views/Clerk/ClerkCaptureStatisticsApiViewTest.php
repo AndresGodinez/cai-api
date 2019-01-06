@@ -8,7 +8,6 @@
 
 namespace Tests\App\Api\Views\Clerk;
 
-
 use App\Consts\Http;
 use App\Core\AppContainer;
 use League\Route\Router;
@@ -19,6 +18,10 @@ use Tests\ConfigurableConnectionTestTrait;
 use Tests\DbUnitTestCase;
 use Tests\TestUtils;
 
+/**
+ * Class ClerkCaptureStatisticsApiViewTest
+ * @package Tests\App\Api\Views\Clerk
+ */
 class ClerkCaptureStatisticsApiViewTest extends DbUnitTestCase
 {
     use ConfigurableConnectionTestTrait;
@@ -56,14 +59,68 @@ class ClerkCaptureStatisticsApiViewTest extends DbUnitTestCase
         $this->assertArrayHasKey('code', $arrayBody);
         $this->assertArrayHasKey('states', $arrayBody);
 
-        $this->assertNotEmpty($arrayBody['id']);
-        $this->assertNotEmpty($arrayBody['name']);
-        $this->assertNotEmpty($arrayBody['code']);
-
         $this->assertInternalType('int', $arrayBody['id']);
         $this->assertInternalType('string', $arrayBody['name']);
         $this->assertInternalType('string', $arrayBody['code']);
         $this->assertInternalType('array', $arrayBody['states']);
+
+        $this->assertEquals(3, \count($arrayBody['states']));
+
+        $state = $arrayBody['states'][0];
+
+        // validate state reg structure
+        $this->assertArrayHasKey('id', $state);
+        $this->assertArrayHasKey('name', $state);
+        $this->assertArrayHasKey('code', $state);
+        $this->assertArrayHasKey('quant', $state);
+        $this->assertArrayHasKey('shops', $state);
+
+        $this->assertInternalType('int', $state['id']);
+        $this->assertInternalType('string', $state['name']);
+        $this->assertInternalType('string', $state['code']);
+        $this->assertInternalType('int', $state['quant']);
+        $this->assertInternalType('array', $state['shops']);
+
+        // validate first state reg data
+        $this->assertEquals(1, $state['id']);
+        $this->assertEquals('AGUASCALIENTES', $state['name']);
+        $this->assertEquals('1', $state['code']);
+        $this->assertEquals(3, $state['quant']);
+        $this->assertEquals(57, \count($state['shops']));
+
+        // last store of first state, must have quant as 2
+        $store = $state['shops'][56];
+
+        // validate store reg structure
+        $this->assertArrayHasKey('id', $store);
+        $this->assertArrayHasKey('name', $store);
+        $this->assertArrayHasKey('address', $store);
+        $this->assertArrayHasKey('quant', $store);
+
+        $this->assertInternalType('int', $store['id']);
+        $this->assertInternalType('string', $store['name']);
+        $this->assertInternalType('int', $store['quant']);
+        $this->assertInternalType('string', $store['address']);
+
+        // validate last store data (of first state)
+        $this->assertEquals(2234, $store['id']);
+        $this->assertEquals('WALMART MAHATMA GHANDI', $store['name']);
+        $this->assertEquals(2, $store['quant']);
+        $this->assertNotEmpty($store['address']);
+
+        // just validate id and count for other states
+
+        $state = $arrayBody['states'][1];
+
+        $this->assertEquals(18, $state['id']);
+        $this->assertEquals(11, $state['quant']);
+        $this->assertEquals(33, \count($state['shops']));
+
+        $state = $arrayBody['states'][2];
+
+        $this->assertEquals(32, $state['id']);
+        $this->assertEquals(0, $state['quant']);
+        $this->assertEquals(24, \count($state['shops']));
     }
 
     /**
@@ -73,7 +130,7 @@ class ClerkCaptureStatisticsApiViewTest extends DbUnitTestCase
      */
     protected function getDataSet()
     {
-        $xmlFile = BASE_DIR . '/tests/dbunit-resources/api-user-data-route.xml';
+        $xmlFile = BASE_DIR . '/tests/dbunit-resources/api-clerk-capture-statistics-route.xml';
         return $this->createMySQLXMLDataSet($xmlFile);
     }
 }

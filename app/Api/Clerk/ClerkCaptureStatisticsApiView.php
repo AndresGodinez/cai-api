@@ -9,8 +9,15 @@
 namespace App\Api\Clerk;
 
 use App\Core\Config;
+use App\Data\Models\ClerkCaptureStatisticData;
+use App\Data\Transformers\ClerkCaptureStatisticDataTransformer;
 use App\Factories\ResponseFactory;
+use DbModels\Entities\Clerk;
+use DbModels\Repositories\ClerkRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use League\Fractal\Manager;
+use League\Fractal\Resource\Item;
+use League\Fractal\Serializer\ArraySerializer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -47,8 +54,19 @@ class ClerkCaptureStatisticsApiView
         $regId = $args['regId'] ?? null;
         $regId = !$regId ? $regId : (int)$regId;
 
+        /** @var ClerkRepository $repo */
+        $repo = $this->em->getRepository(Clerk::class);
+
+        /** @var ClerkCaptureStatisticData $data */
+        $data = $repo->getCaptureStatisticsData($regId);
+
+        $manager = new Manager();
+        $manager->setSerializer(new ArraySerializer);
+        $resource = new Item($data, new ClerkCaptureStatisticDataTransformer);
+        $body = $manager->createData($resource);
+
         $response = ResponseFactory::buildBasicJsonResponse();
-        $response->getBody()->write(\file_get_contents(BASE_DIR . "/storage/dummy-clerk-capture-statistics.json"));
+        $response->getBody()->write($body->toJson());
 
         return $response;
     }
