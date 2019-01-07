@@ -99,11 +99,11 @@ class UserDataApiViewTest extends DbUnitTestCase
         $this->assertInternalType('string', $shop0['address']);
 
         $this->assertEquals(92, $shop0['id']);
-        $this->assertEquals('CHEDRAUI CUAJIMALPA SUC 147', $shop0['name']);
+        $this->assertEquals('CHEDRAUI CUAJIMALPA SUC 147 - CHEDRAUI', $shop0['name']);
 
         $shopLast = $state['shops'][153];
         $this->assertEquals(1433, $shopLast['id']);
-        $this->assertEquals('NUEVA WALMART SC 3876 LAS AGUILA', $shopLast['name']);
+        $this->assertEquals('NUEVA WALMART SC 3876 LAS AGUILA - WAL MART', $shopLast['name']);
     }
 
     /**

@@ -43,9 +43,10 @@ class UserData
                 ];
             }
 
+            $shopName = \sprintf("%s - %s", $item['storeName'], $item['chainStoreName']);
             \array_push($states[$item['stateId']]['shops'], [
                 'id' => (int)$item['storeId'],
-                'name' => $item['storeName'],
+                'name' => $shopName,
                 'address' => $item['storeAddress'],
             ]);
         }
