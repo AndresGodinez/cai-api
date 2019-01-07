@@ -104,7 +104,7 @@ class ClerkCaptureStatisticsApiViewTest extends DbUnitTestCase
 
         // validate last store data (of first state)
         $this->assertEquals(2234, $store['id']);
-        $this->assertEquals('WALMART MAHATMA GHANDI', $store['name']);
+        $this->assertEquals('WALMART MAHATMA GHANDI - WAL MART', $store['name']);
         $this->assertEquals(2, $store['quant']);
         $this->assertNotEmpty($store['address']);
 
