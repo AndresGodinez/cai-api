@@ -10,6 +10,7 @@ namespace App\Core\ContainerProviders;
 
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
+use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersCountApiView;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 
 /**
@@ -21,6 +22,7 @@ class InventoryEvidenceApiProvider extends AbstractServiceProvider
     protected $provides = [
         InventoryEvidenceCreateApiView::class,
         InventoryEvidenceReadRegistersApiView::class,
+        InventoryEvidenceReadRegistersCountApiView::class,
     ];
 
     /**
@@ -40,6 +42,11 @@ class InventoryEvidenceApiProvider extends AbstractServiceProvider
 
         $this->container
             ->add(InventoryEvidenceReadRegistersApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(InventoryEvidenceReadRegistersCountApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
     }

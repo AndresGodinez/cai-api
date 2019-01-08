@@ -9,22 +9,18 @@
 namespace App\Api\InventoryEvidence;
 
 use App\Core\Config;
-use App\Data\Transformers\InventoryEvidenceEntityTransformer;
 use App\Factories\ResponseFactory;
 use DbModels\Entities\InventoryEvidence;
 use DbModels\Repositories\InventoryEvidenceRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use League\Fractal\Manager;
-use League\Fractal\Resource\Collection;
-use League\Fractal\Serializer\DataArraySerializer;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
 /**
- * Class InventoryEvidenceReadRegistersApiView
+ * Class InventoryEvidenceReadRegistersCountApiView
  * @package App\Api\InventoryEvidence
  */
-class InventoryEvidenceReadRegistersApiView
+class InventoryEvidenceReadRegistersCountApiView
 {
     /** @var Config */
     protected $config;
@@ -46,39 +42,20 @@ class InventoryEvidenceReadRegistersApiView
      * @param ServerRequestInterface $request
      * @param array $args
      * @return ResponseInterface
-     * @throws \App\Exceptions\InternalException
+     * @throws \Doctrine\ORM\NonUniqueResultException
      */
     public function __invoke(ServerRequestInterface $request, array $args) : ResponseInterface
     {
         $authData = $request->getAttribute('authData');
         $userId = !$authData['userId'] ? null : (int)$authData['userId'];
 
-        $queryParams = $request->getQueryParams();
-        $include = $queryParams['include'] ?? false;
-        $results = $queryParams['results'] ?? false;
-        $page = $queryParams['page'] ?? false;
-
-        if (!$results || $page === false || $page < 0) {
-            $response = ResponseFactory::buildBasicBadJsonResponse();
-            $response->getBody()->write(\json_encode(['msg' => 'Los parámetros son inválidos.']));
-            return $response;
-        }
-
         /** @var InventoryEvidenceRepository $repo */
         $repo = $this->em->getRepository(InventoryEvidence::class);
 
-        $registers = $repo->getValidRegistersFromUserId($results, $page, $userId);
-
-        $manager = new Manager();
-        if ($include) {
-            $manager->parseIncludes($include);
-        }
-        $manager->setSerializer(new DataArraySerializer);
-        $resource = new Collection($registers, new InventoryEvidenceEntityTransformer);
-        $body = $manager->createData($resource);
+        $total = $repo->getValidRegistersCountFromUserId($userId);
 
         $response = ResponseFactory::buildBasicJsonResponse();
-        $response->getBody()->write($body->toJson());
+        $response->getBody()->write(\json_encode(["total" => (int)$total]));
 
         return $response;
     }

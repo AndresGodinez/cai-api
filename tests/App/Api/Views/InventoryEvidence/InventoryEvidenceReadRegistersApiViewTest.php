@@ -12,7 +12,6 @@ use App\Consts\Http;
 use App\Core\AppContainer;
 use DbModels\Consts\DefaultEntityRegStatus;
 use DbModels\Consts\InventoryEvidencePhotoType;
-use DbModels\Entities\InventoryEvidencePhoto;
 use League\Route\Router;
 use PHPUnit\DbUnit\DataSet\IDataSet;
 use Psr\Container\ContainerInterface;
@@ -46,7 +45,7 @@ class InventoryEvidenceReadRegistersApiViewTest extends DbUnitTestCase
         /** @var Router $router */
         $router = self::$container->get('router');
 
-        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence', ['include' => 'photos']);
+        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence', ['include' => 'photos', 'results' => 10, 'page' => 0]);
         $request = $request->withHeader(Http::HEADER_AUTHORIZATION, 'Bearer ' . $jwt);
 
         /** @var ResponseInterface $response */
@@ -108,6 +107,78 @@ class InventoryEvidenceReadRegistersApiViewTest extends DbUnitTestCase
         $this->assertArrayHasKey('filePath', $photo);
         $this->assertArrayHasKey('type', $photo);
         $this->assertEquals(InventoryEvidencePhotoType::QR, $photo['type']);
+    }
+
+    public function testRouteResponseSuccessfullyWithNoData()
+    {
+        $jwt = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDU0MjY3ODEsIm5iZiI6MTU0NTQyNjc4MSwic3ViIjoiNWMxZDU3NWRiY2ViNyIsInVzZXJJZCI6MiwibmFtZSI6IkltYW5vbCBIdW1iZXJ0byBSYW1cdTAwZWRyZXogTFx1MDBmM3BleiJ9.cc4MXPPjhTccbtYlR7Ad3U8ns372ve1VWMrc6ER2M2Q';
+
+        /** @var Router $router */
+        $router = self::$container->get('router');
+
+        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence', ['include' => 'photos', 'results' => 10, 'page' => 1]);
+        $request = $request->withHeader(Http::HEADER_AUTHORIZATION, 'Bearer ' . $jwt);
+
+        /** @var ResponseInterface $response */
+        $response = $router->dispatch($request);
+
+        TestUtils::runDefaultJsonViewResponseTests($this, $response);
+
+        $body = (string)$response->getBody();
+        $arrayBody = \json_decode($body, JSON_OBJECT_AS_ARRAY);
+
+        $this->assertArrayHasKey('data', $arrayBody);
+        $this->assertInternalType('array', $arrayBody['data']);
+
+        $this->assertEquals(0, \count($arrayBody['data']));
+    }
+
+    public function testErrorNoResultsParam()
+    {
+        $jwt = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDU0MjY3ODEsIm5iZiI6MTU0NTQyNjc4MSwic3ViIjoiNWMxZDU3NWRiY2ViNyIsInVzZXJJZCI6MiwibmFtZSI6IkltYW5vbCBIdW1iZXJ0byBSYW1cdTAwZWRyZXogTFx1MDBmM3BleiJ9.cc4MXPPjhTccbtYlR7Ad3U8ns372ve1VWMrc6ER2M2Q';
+
+        /** @var Router $router */
+        $router = self::$container->get('router');
+
+        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence', ['include' => 'photos', 'page' => 1]);
+        $request = $request->withHeader(Http::HEADER_AUTHORIZATION, 'Bearer ' . $jwt);
+
+        /** @var ResponseInterface $response */
+        $response = $router->dispatch($request);
+
+        TestUtils::runDefaultJsonViewResponseTests($this, $response, Http::STATUS_CODE_HTTP_BAD_REQUEST);
+
+        $body = (string)$response->getBody();
+        $arrayBody = \json_decode($body, JSON_OBJECT_AS_ARRAY);
+
+        $this->assertArrayHasKey('msg', $arrayBody);
+        $this->assertInternalType('string', $arrayBody['msg']);
+
+        $this->assertEqualsIgnoringCase('Los parámetros son inválidos.', $arrayBody['msg']);
+    }
+
+    public function testErrorNoPageParam()
+    {
+        $jwt = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NDU0MjY3ODEsIm5iZiI6MTU0NTQyNjc4MSwic3ViIjoiNWMxZDU3NWRiY2ViNyIsInVzZXJJZCI6MiwibmFtZSI6IkltYW5vbCBIdW1iZXJ0byBSYW1cdTAwZWRyZXogTFx1MDBmM3BleiJ9.cc4MXPPjhTccbtYlR7Ad3U8ns372ve1VWMrc6ER2M2Q';
+
+        /** @var Router $router */
+        $router = self::$container->get('router');
+
+        $request = TestUtils::makeServerRequestMock('GET', '/api/inventory-evidence', ['include' => 'photos', 'results' => 10]);
+        $request = $request->withHeader(Http::HEADER_AUTHORIZATION, 'Bearer ' . $jwt);
+
+        /** @var ResponseInterface $response */
+        $response = $router->dispatch($request);
+
+        TestUtils::runDefaultJsonViewResponseTests($this, $response, Http::STATUS_CODE_HTTP_BAD_REQUEST);
+
+        $body = (string)$response->getBody();
+        $arrayBody = \json_decode($body, JSON_OBJECT_AS_ARRAY);
+
+        $this->assertArrayHasKey('msg', $arrayBody);
+        $this->assertInternalType('string', $arrayBody['msg']);
+
+        $this->assertEqualsIgnoringCase('Los parámetros son inválidos.', $arrayBody['msg']);
     }
 
     /**

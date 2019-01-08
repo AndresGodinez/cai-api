@@ -17,6 +17,7 @@ use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
+use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersCountApiView;
 use App\Api\InventoryEvidencePhoto\InventoryEvidencePhotoReadPhotoContentApiView;
 use App\Api\PhotoUploadSizeTestApiView;
 use App\Api\User\UserDataApiView;
@@ -95,6 +96,10 @@ class AppRouter
 
         $r = $route->get('/api/inventory-evidence', InventoryEvidenceReadRegistersApiView::class);
         $r->setName('inventory-evidence-read-registers-route');
+        $r->middleware($secureApiMiddleware);
+
+        $r = $route->get('/api/inventory-evidence/count', InventoryEvidenceReadRegistersCountApiView::class);
+        $r->setName('inventory-evidence-read-registers-count-route');
         $r->middleware($secureApiMiddleware);
 
         $r = $route->get('/api/inventory-evidence-photo/{regId:regId}', InventoryEvidencePhotoReadPhotoContentApiView::class);
