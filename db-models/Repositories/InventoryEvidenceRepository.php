@@ -27,7 +27,7 @@ class InventoryEvidenceRepository extends EntityRepository
     {
         $qb = $this->createQueryBuilder('ie');
         $qb->where($qb->expr()->eq('ie.user', $userId));
-        $qb->where($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
+        $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
 
         $firstResult = $results * $page;
 
@@ -47,7 +47,7 @@ class InventoryEvidenceRepository extends EntityRepository
         $qb = $this->createQueryBuilder('ie');
         $qb->select('COUNT(ie.id)');
         $qb->where($qb->expr()->eq('ie.user', $userId));
-        $qb->where($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
+        $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
 
         return $qb->getQuery()->getSingleScalarResult();
     }
