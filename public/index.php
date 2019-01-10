@@ -6,6 +6,8 @@
  * Time: 09:13 AM
  */
 
+\date_default_timezone_set('America/Monterrey');
+
 require_once __DIR__ . '/../bootstrap.php';
 
 $router = $container->get('router');
