@@ -15,6 +15,7 @@ use App\Api\Clerk\ClerkCaptureStatisticsApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
+use App\Api\InventoryEvidence\GetReportEvidenceApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersCountApiView;
@@ -119,6 +120,11 @@ class AppRouter
 
         $r = $route->get('/api/get-inventory-evidence', GetInventoryEvidenceApiView::class);
         $r->setName('get-inventory-evidence');
+
+        //routes to reports
+
+        $r = $route->get('/api/report/getProgressEvidenceByDate', GetReportEvidenceApiView::class );
+        $r->setName('get-report-evidence-by-date');
 
 
         return $route;
