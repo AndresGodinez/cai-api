@@ -35,7 +35,6 @@ class GetInventoryEvidenceApiView
 
     public function __invoke(ServerRequestInterface $request, array $args) : ResponseInterface
     {
-        error_log(print_r('funcionando', true));
         //file_put_contents("../../../storage/jsonapp.json");
         //error_log(print_r(BASE_DIR. '/storage/jsonapp.json', true));
         $data = file_get_contents(BASE_DIR. '/storage/jsonapp.json');

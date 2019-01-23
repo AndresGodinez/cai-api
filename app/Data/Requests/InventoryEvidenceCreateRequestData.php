@@ -187,7 +187,7 @@ class InventoryEvidenceCreateRequestData implements ValidatableRequestDataInterf
 
         $line = $brand->getLine();
         $expectedCode = $line->getCode() . $brand->getCode();
-        $expectedCodeRx = '/^' . $expectedCode . '[0-4][0-9]{3}$/i';
+        $expectedCodeRx = '/^' . $expectedCode . '[0-9]{4}$/i';
 
         if (!\preg_match($expectedCodeRx, $this->code)) {
             throw new ValidationException("El código no cumple con el formato esperado.");

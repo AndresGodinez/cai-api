@@ -2,9 +2,12 @@
 /**
  * Created by PhpStorm.
  * User: aGodinez
- * Date: 2019-01-03
- * Time: 10:19
+ * Date: 2019-01-18
+ * Time: 15:46
  */
+
+namespace App\Api\InventoryEvidence;
+
 
 namespace App\Api\InventoryEvidence;
 
@@ -12,12 +15,14 @@ namespace App\Api\InventoryEvidence;
 use App\Core\Config;
 use DateTime;
 use DbModels\Entities\InventoryEvidence;
+use DbModels\Entities\Store;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+
 use function array_push;
 
-class GetReportEvidenceApiView
+class PendingStoreReportApiView
 {
 
     /** @var Config */
@@ -40,44 +45,38 @@ class GetReportEvidenceApiView
      * @param ServerRequestInterface $request
      * @param array                  $args
      * @return ResponseInterface
-     * @throws \Exception
      */
     public function __invoke(ServerRequestInterface $request, array $args): ResponseInterface
     {
         $params = $request -> getQueryParams();
 
-        $repo = $this -> em -> getRepository(InventoryEvidence::class);
+        $repo = $this -> em -> getRepository(Store::class);
 
-        $data = $repo -> getAllReports($params);
+        $data = $repo -> getPendingStores($params);
+
         $orderElements = [];
-        array_push($orderElements, ['idcaptura', 'Codigo registro', 'Nombre Capturista', 'Codigo Capturista',
-            'Fecha Captura', 'Ciudad', 'Codigo postal', 'Nombre de tienda', 'Identificador de tienda', 'Direccion', 'Tipo Tienda',
-            'Nombre Marca', 'Nombre Cadena', 'Tipo de mueble', 'Comentario']);
+
+        array_push($orderElements, ['Identificador de tienda', 'Nombre Tienda', 'Ciudad', 'Codigo Postal',
+            'Tipo de tienda', 'Direccion', 'Cadena Comercial']);
+
         foreach ($data as $item) {
-            if ($item['inventoryComment'] === 'undefined' || $item['inventoryComment'] === 'null')
-                $item['inventoryComment'] = "Sin comentarios";
             $element = [
-                'inventoryId' => $item['inventoryId'],
-                'inventoryCode' => $item['inventoryCode'],
-                'clerk_name' => $item['clerk_name'],
-                'clerkCode' => $item['clerkCode'],
-                'captureDate' => $item['captureDate'] -> format('Y-m-d H:i:s'),
-                'cityName' => $item['cityName'],
-                'storePostalCode' => $item['storePostalCode'],
-                'storeName' => $item['storeName'],
+
                 'storeId' => $item['storeId'],
-                'storeAddress' => $item['storeAddress'],
+                'storeName' => $item['storeName'],
+                'storeCityName' => $item['storeCityName'],
+                'storePostalCode' => $item['storePostalCode'],
                 'storeType' => $item['storeType'],
-                'brandName' => $item['brandName'],
-                'chainStore' => $item['chainStore'],
-                'furniture_name' => $item['furniture_name'],
-                'inventoryComment' => $item['inventoryComment'],
+                'storeAddress' => $item['storeAddress'],
+                'ChainStoreName' => $item['ChainStoreName'],
+
             ];
             array_push($orderElements, $element);
         }
         $date = new DateTime();
         $result = $date->format('Y-m-d H:i:s');
-        $fileName = "AvanceDeCaptura".$result.".csv";
+
+        $fileName = 'TiendasPendientes'.$result.'.csv';
         header('Content-Type: application/excel');
         header('Content-Disposition: attachment; filename="' . $fileName . '"');
         $fp = fopen('php://output', 'w');

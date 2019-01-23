@@ -10,6 +10,7 @@ namespace App\Core\ContainerProviders;
 
 use App\Api\AuthApiView;
 use App\Api\InventoryEvidence\GetReportEvidenceApiView;
+use App\Api\InventoryEvidence\PendingStoreReportApiView;
 use App\Api\PhotoUploadSizeTestApiView;
 use League\Container\ServiceProvider\AbstractServiceProvider;
 
@@ -22,7 +23,8 @@ class ApiProvider extends AbstractServiceProvider
     protected $provides = [
         AuthApiView::class,
         PhotoUploadSizeTestApiView::class,
-        GetReportEvidenceApiView::class
+        GetReportEvidenceApiView::class,
+        PendingStoreReportApiView::class
     ];
 
     /**
@@ -45,6 +47,11 @@ class ApiProvider extends AbstractServiceProvider
 
         $this->container
             ->add(GetReportEvidenceApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(PendingStoreReportApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
 

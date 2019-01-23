@@ -13,12 +13,11 @@ use DbModels\Entities\Brand;
 use DbModels\Entities\ChainStore;
 use DbModels\Entities\Clerk;
 use DbModels\Entities\FurnitureType;
+use DbModels\Entities\State;
 use DbModels\Entities\Store;
 use DbModels\Entities\User;
 use Doctrine\ORM\EntityRepository;
-use Doctrine\ORM\Query\AST\BetweenExpression;
 use Doctrine\ORM\Query\Expr;
-use function PHPSTORM_META\elementType;
 
 /**
  * Class InventoryEvidenceRepository
@@ -135,6 +134,39 @@ class InventoryEvidenceRepository extends EntityRepository
 
             return $qb->getQuery()->getArrayResult();
         }
+    }
 
+    public function getProgressState()
+    {
+        $qb = $this->createQueryBuilder('ie');
+        $qb->select(
+            'ie.id as inventoryId',
+            's.name as StoreName',
+            's.id as storeId',
+            'st.id as stateId',
+            'st.name as stateName'
+        );
+        $qb->leftJoin(Store::class, 's', Expr\Join::WITH, 's.id = ie.store');
+        $qb->leftJoin(State::class, 'st', Expr\Join::WITH, 'st.id = s.state');
+        $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    public function getProgressByBrand()
+    {
+        $qb = $this->createQueryBuilder('ie');
+        $qb->select(
+            'ie.id as inventoryId',
+            'b.id as brandId',
+            'b.name as brandName',
+            's.id as storeId',
+            's.name as storeName'
+        );
+        $qb->leftJoin(Brand::class, 'b', Expr\Join::WITH, 'b.id = ie.brand');
+        $qb->leftJoin(Store::class, 's', Expr\Join::WITH, 's.id = ie.store');
+        $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
+
+        return $qb->getQuery()->getArrayResult();
     }
 }

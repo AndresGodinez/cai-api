@@ -13,12 +13,15 @@ use App\Api\Brand\BrandFurnitureTypeListApiView;
 use App\Api\Brand\BrandListApiView;
 use App\Api\Clerk\ClerkCaptureStatisticsApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
+use App\Api\Indicator\ProgressByBrandApiView;
 use App\Api\Indicator\ProgressPercByClerkApiView;
+use App\Api\Indicator\ProgressPercByStateApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
 use App\Api\InventoryEvidence\GetReportEvidenceApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersCountApiView;
+use App\Api\InventoryEvidence\PendingStoreReportApiView;
 use App\Api\InventoryEvidencePhoto\InventoryEvidencePhotoReadPhotoContentApiView;
 use App\Api\PhotoUploadSizeTestApiView;
 use App\Api\User\UserDataApiView;
@@ -116,6 +119,12 @@ class AppRouter
         $r = $route->get('/api/indicator/progress-perc-by-clerk', ProgressPercByClerkApiView::class);
         $r->setName('indicator-progress-perc-by-clerk-route');
 
+        $r = $route->get('/api/indicator/progress-perc-by-state', ProgressPercByStateApiView::class);
+        $r->setName('indicator-progress-perc-by-state-route');
+
+        $r = $route->get('/api/indicator/progress-by-brand', ProgressByBrandApiView::class);
+        $r->setName('indicator-progress-by-brand-route');
+
         //routes to dashboard
 
         $r = $route->get('/api/get-inventory-evidence', GetInventoryEvidenceApiView::class);
@@ -125,6 +134,9 @@ class AppRouter
 
         $r = $route->get('/api/report/getProgressEvidenceByDate', GetReportEvidenceApiView::class );
         $r->setName('get-report-evidence-by-date');
+
+        $r = $route->get('/api/report/pendingStores', PendingStoreReportApiView::class );
+        $r->setName('pending-store-report');
 
 
         return $route;

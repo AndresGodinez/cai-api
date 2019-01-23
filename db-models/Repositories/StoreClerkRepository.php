@@ -10,9 +10,11 @@ namespace DbModels\Repositories;
 
 use DbModels\Entities\Clerk;
 use DbModels\Entities\InventoryEvidence;
+use DbModels\Entities\State;
 use DbModels\Entities\StoreClerk;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query\Expr;
+use function PHPSTORM_META\elementType;
 
 /**
  * Class StoreClerkRepository
@@ -44,4 +46,28 @@ class StoreClerkRepository extends EntityRepository
 
         return $data;
     }
+
+    public function getProgressPercByStateData()
+    {
+        $qb = $this->getEntityManager()->createQueryBuilder();
+
+        $qb->select('sc', 's AS store', 's.id AS storeId', 's.name AS storeName', 'sta.id as stateId', 'sta.name as stateName');
+        $qb->addSelect('COUNT(DISTINCT sc) AS assignedStoreNumber');
+        $qb->addSelect('COUNT(DISTINCT ie) AS capturedStore');
+
+        $qb->from(StoreClerk::class, 'sc');
+        $qb->join('sc.store', 's');
+        $qb->join('s.state', 'st');
+        $qb->join(State::class, 'sta', Expr\Join::WITH, 's.state = sta.id');
+        $qb->leftJoin(InventoryEvidence::class, 'ie', Expr\Join::WITH, 'sc.store
+        = ie.store');
+
+        $qb->groupBy('sta.id');
+
+        $q = $qb->getQuery();
+
+        return $q->getArrayResult();
+    }
+
+
 }
