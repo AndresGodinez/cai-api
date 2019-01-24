@@ -48,6 +48,9 @@ class Store
     protected $schedule;
 
     /** @var null|string */
+    protected $sapCode;
+
+    /** @var null|string */
     protected $type;
 
     /** @var State */
@@ -86,6 +89,22 @@ class Store
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSapCode(): string
+    {
+        return $this->sapCode;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setSapCode(?string $sapCode): void
+    {
+        $this->sapCode = $sapCode;
     }
 
     /**

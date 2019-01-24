@@ -38,8 +38,7 @@ class StoreRepository extends EntityRepository
         $qb->leftJoin(ChainStore::class, 'cs', Expr\Join::WITH, 's.chainStore = cs.id');
 
         $qb->andWhere($qb->expr()->eq('s.regStatus', DefaultEntityRegStatus::ACTIVE));
-        $qb->andWhere("ie.store IS NULL");
-
+        $qb->andWhere("ie.id IS NULL");
 
         return $qb->getQuery()->getArrayResult();
     }

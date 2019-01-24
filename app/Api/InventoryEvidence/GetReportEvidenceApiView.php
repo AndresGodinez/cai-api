@@ -49,10 +49,9 @@ class GetReportEvidenceApiView
         $repo = $this -> em -> getRepository(InventoryEvidence::class);
 
         $data = $repo -> getAllReports($params);
+
         $orderElements = [];
-        array_push($orderElements, ['idcaptura', 'Codigo registro', 'Nombre Capturista', 'Codigo Capturista',
-            'Fecha Captura', 'Ciudad', 'Codigo postal', 'Nombre de tienda', 'Identificador de tienda', 'Direccion', 'Tipo Tienda',
-            'Nombre Marca', 'Nombre Cadena', 'Tipo de mueble', 'Comentario']);
+        array_push($orderElements, ['idcaptura', 'Codigo de registro', 'Nombre Capturista', 'Codigo de Capturista', 'Fecha de Captura', 'Ciudad', 'Codigo Postal', 'Tipo de Tienda', 'Nombre de Tienda', 'Codigo Sap de Tienda', 'Direccion de la tienda', 'Identificador marca', 'Nombre Marca', 'Nombre de cadena', 'Tipo de mueble', 'Comentarios', 'Identificador de Tienda' ]);
         foreach ($data as $item) {
             if ($item['inventoryComment'] === 'undefined' || $item['inventoryComment'] === 'null')
                 $item['inventoryComment'] = "Sin comentarios";
@@ -64,14 +63,16 @@ class GetReportEvidenceApiView
                 'captureDate' => $item['captureDate'] -> format('Y-m-d H:i:s'),
                 'cityName' => $item['cityName'],
                 'storePostalCode' => $item['storePostalCode'],
-                'storeName' => $item['storeName'],
-                'storeId' => $item['storeId'],
-                'storeAddress' => $item['storeAddress'],
                 'storeType' => $item['storeType'],
+                'storeName' => $item['storeName'],
+                'storeSapCode' => $item['storeSapCode'],
+                'storeAddress' => $item['storeAddress'],
+                'brandId' => $item['brandId'],
                 'brandName' => $item['brandName'],
                 'chainStore' => $item['chainStore'],
                 'furniture_name' => $item['furniture_name'],
                 'inventoryComment' => $item['inventoryComment'],
+                'storeId' => $item['storeId'],
             ];
             array_push($orderElements, $element);
         }

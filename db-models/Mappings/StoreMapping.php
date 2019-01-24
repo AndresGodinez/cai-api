@@ -37,6 +37,7 @@ class StoreMapping
         $builder->createField('cityName', 'string')->columnName('city_name')->length(255)->option('default', '')->build();
         $builder->createField('address', 'string')->option('default', '')->build();
         $builder->createField('postalCode', 'string')->columnName('postal_code')->length(30)->nullable()->build();
+        $builder->createField('sapCode', 'string')->columnName('sap_code')->length(30)->nullable()->build();
         $builder->createField('schedule', 'string')->length(50)->nullable()->build();
         $builder->createField('type', 'string')->length(50)->nullable()->build();
 
