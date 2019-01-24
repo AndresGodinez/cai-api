@@ -14,7 +14,6 @@ namespace App\Api\InventoryEvidence;
 
 use App\Core\Config;
 use DateTime;
-use DbModels\Entities\InventoryEvidence;
 use DbModels\Entities\Store;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -45,6 +44,7 @@ class PendingStoreReportApiView
      * @param ServerRequestInterface $request
      * @param array                  $args
      * @return ResponseInterface
+     * @throws \Exception
      */
     public function __invoke(ServerRequestInterface $request, array $args): ResponseInterface
     {
@@ -56,7 +56,7 @@ class PendingStoreReportApiView
 
         $orderElements = [];
 
-        array_push($orderElements, ['Identificador de tienda', 'Nombre Tienda', 'Ciudad', 'Codigo Postal',
+        array_push($orderElements, ['Identificador de tienda', 'Nombre Tienda', 'SapCode','Ciudad', 'Codigo Postal',
             'Tipo de tienda', 'Direccion', 'Cadena Comercial']);
 
         foreach ($data as $item) {
@@ -64,6 +64,7 @@ class PendingStoreReportApiView
 
                 'storeId' => $item['storeId'],
                 'storeName' => $item['storeName'],
+                'sapCode' => $item['storeSapCode'],
                 'storeCityName' => $item['storeCityName'],
                 'storePostalCode' => $item['storePostalCode'],
                 'storeType' => $item['storeType'],

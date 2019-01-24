@@ -28,6 +28,7 @@ class StoreRepository extends EntityRepository
             's.id as storeId',
             's.name as storeName',
             's.cityName as storeCityName',
+            's.sapCode as storeSapCode',
             's.postalCode as storePostalCode',
             's.type as storeType',
             's.address as storeAddress',
