@@ -31,14 +31,15 @@ class StoreRepository extends EntityRepository
             's.postalCode as storePostalCode',
             's.type as storeType',
             's.address as storeAddress',
-            'cs.name as ChainStoreName'
-
+            'cs.name as ChainStoreName',
+            'ie.id as inventoryId'
         );
         $qb->leftJoin(InventoryEvidence::class, 'ie', Expr\Join::WITH, 'ie.store = s.id');
         $qb->leftJoin(ChainStore::class, 'cs', Expr\Join::WITH, 's.chainStore = cs.id');
 
+        $qb->where("ie.id IS NULL");
         $qb->andWhere($qb->expr()->eq('s.regStatus', DefaultEntityRegStatus::ACTIVE));
-        $qb->andWhere("ie.id IS NULL");
+
 
         return $qb->getQuery()->getArrayResult();
     }

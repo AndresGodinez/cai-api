@@ -77,7 +77,7 @@ class ProgressPercByStateApiView
             $uniqueStoreId = [];
 
             foreach ($totalsByState as $totalState) {
-                if (!\in_array($totalState['storeId'], $uniqueStoreId)){
+                if (!in_array($totalState['storeId'], $uniqueStoreId)){
                     array_push($uniqueStoreId, $totalState['storeId']);
                     array_push($storeState, $totalState);
                 }
