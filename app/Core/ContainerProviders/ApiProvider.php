@@ -9,7 +9,10 @@
 namespace App\Core\ContainerProviders;
 
 use App\Api\AuthApiView;
+use App\Api\InventoryEvidence\GetPhotosInventoryApiView;
+use App\Api\InventoryEvidence\GetPhotoZipApiView;
 use App\Api\InventoryEvidence\GetReportEvidenceApiView;
+use App\Api\InventoryEvidence\GetTotalInventoryFilterByDateApiView;
 use App\Api\InventoryEvidence\PendingStoreReportApiView;
 use App\Api\PhotoUploadSizeTestApiView;
 use League\Container\ServiceProvider\AbstractServiceProvider;
@@ -24,7 +27,10 @@ class ApiProvider extends AbstractServiceProvider
         AuthApiView::class,
         PhotoUploadSizeTestApiView::class,
         GetReportEvidenceApiView::class,
-        PendingStoreReportApiView::class
+        PendingStoreReportApiView::class,
+        GetPhotosInventoryApiView::class,
+        GetTotalInventoryFilterByDateApiView::class,
+        GetPhotoZipApiView::class
     ];
 
     /**
@@ -52,6 +58,21 @@ class ApiProvider extends AbstractServiceProvider
 
         $this->container
             ->add(PendingStoreReportApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(GetPhotosInventoryApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(GetTotalInventoryFilterByDateApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(GetPhotoZipApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
 

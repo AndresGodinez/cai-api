@@ -18,7 +18,10 @@ use App\Api\Indicator\ProgressByStoreApiView;
 use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\Indicator\ProgressPercByStateApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
+use App\Api\InventoryEvidence\GetPhotosInventoryApiView;
+use App\Api\InventoryEvidence\GetPhotoZipApiView;
 use App\Api\InventoryEvidence\GetReportEvidenceApiView;
+use App\Api\InventoryEvidence\GetTotalInventoryFilterByDateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceCreateApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersApiView;
 use App\Api\InventoryEvidence\InventoryEvidenceReadRegistersCountApiView;
@@ -141,6 +144,16 @@ class AppRouter
 
         $r = $route->get('/api/report/pendingStores', PendingStoreReportApiView::class );
         $r->setName('pending-store-report');
+
+        $r = $route->get('/api/report/getTotalInventoryFilterByDate', GetTotalInventoryFilterByDateApiView::class );
+        $r->setName('get-total-inventory-filter-by-date');
+
+        $r = $route->get('/api/report/getPhotosInventory', GetPhotosInventoryApiView::class );
+        $r->setName('get-photos-inventory');
+
+
+        $r = $route->get('/api/report/getPhotosZip', GetPhotoZipApiView::class );
+        $r->setName('get-photos-zip-inventory');
 
 
         return $route;

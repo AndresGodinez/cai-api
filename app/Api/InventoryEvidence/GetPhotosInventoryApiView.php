@@ -10,7 +10,7 @@ namespace App\Api\InventoryEvidence;
 
 
 use App\Core\Config;
-use DateTime;
+use App\Factories\ResponseFactory;
 use DbModels\Entities\InventoryEvidence;
 use Doctrine\ORM\EntityManagerInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -50,15 +50,11 @@ class GetPhotosInventoryApiView
 
         $data = $repo -> getAllReportsPhotos($params);
 
-        exit();
-
         $orderElements = [];
-        array_push($orderElements, ['inventoryQuantity', 'idcaptura', 'Codigo de registro', 'Nombre Capturista', 'Codigo de Capturista', 'Fecha de Captura', 'Ciudad', 'Codigo Postal', 'Tipo de Tienda', 'Nombre de Tienda', 'Codigo Sap de Tienda', 'Direccion de la tienda', 'Identificador marca', 'Nombre Marca', 'Nombre de cadena', 'Tipo de mueble', 'Comentarios', 'Identificador de Tienda' ]);
         foreach ($data as $item) {
             if ($item['inventoryComment'] === 'undefined' || $item['inventoryComment'] === 'null')
                 $item['inventoryComment'] = "Sin comentarios";
             $element = [
-                'inventoryQuantity' => $item['inventoryQuantity'],
                 'inventoryId' => $item['inventoryId'],
                 'inventoryCode' => $item['inventoryCode'],
                 'clerk_name' => $item['clerk_name'],
@@ -79,19 +75,9 @@ class GetPhotosInventoryApiView
             ];
             array_push($orderElements, $element);
         }
-        $date = new DateTime();
-        $result = $date->format('Y-m-d H:i:s');
-        $fileName = "AvanceDeCaptura".$result.".csv";
-        header('Content-Type: application/excel');
-        header('Content-Disposition: attachment; filename="' . $fileName . '"');
-        $fp = fopen('php://output', 'w');
+        $response = ResponseFactory::buildBasicJsonResponse();
+        $response->getBody()->write(\json_encode($orderElements));
 
-        foreach ($orderElements as $row) {
-            fputcsv($fp, $row);
-        }
-
-        fclose($fp);
-
-        die();
+        return $response;
     }
 }
