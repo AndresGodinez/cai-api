@@ -14,6 +14,7 @@ use App\Api\Brand\BrandListApiView;
 use App\Api\Clerk\ClerkCaptureStatisticsApiView;
 use App\Api\FurnitureType\FurnitureTypeListApiView;
 use App\Api\Indicator\ProgressByBrandApiView;
+use App\Api\Indicator\ProgressByStoreApiView;
 use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\Indicator\ProgressPercByStateApiView;
 use App\Api\InventoryEvidence\GetInventoryEvidenceApiView;
@@ -124,6 +125,9 @@ class AppRouter
 
         $r = $route->get('/api/indicator/progress-by-brand', ProgressByBrandApiView::class);
         $r->setName('indicator-progress-by-brand-route');
+
+        $r = $route->get('/api/indicator/progress-by-stores', ProgressByStoreApiView::class);
+        $r->setName('indicator-progress-by-stores-route');
 
         //routes to dashboard
 

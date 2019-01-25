@@ -10,6 +10,7 @@ namespace App\Core\ContainerProviders;
 
 use App\Api\AuthApiView;
 use App\Api\Indicator\ProgressByBrandApiView;
+use App\Api\Indicator\ProgressByStoreApiView;
 use App\Api\Indicator\ProgressPercByClerkApiView;
 use App\Api\Indicator\ProgressPercByStateApiView;
 use App\Api\PhotoUploadSizeTestApiView;
@@ -24,7 +25,8 @@ class IndicatorApiProvider extends AbstractServiceProvider
     protected $provides = [
         ProgressPercByClerkApiView::class,
         ProgressPercByStateApiView::class,
-        ProgressByBrandApiView::class
+        ProgressByBrandApiView::class,
+        ProgressByStoreApiView::class
     ];
 
     /**
@@ -48,6 +50,11 @@ class IndicatorApiProvider extends AbstractServiceProvider
 
         $this->container
             ->add(ProgressByBrandApiView::class)
+            ->addMethodCall('setConfig', ['model-config'])
+            ->addMethodCall('setEm', ['entity-manager']);
+
+        $this->container
+            ->add(ProgressByStoreApiView::class)
             ->addMethodCall('setConfig', ['model-config'])
             ->addMethodCall('setEm', ['entity-manager']);
     }

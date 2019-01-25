@@ -44,4 +44,40 @@ class StoreRepository extends EntityRepository
 
         return $qb->getQuery()->getArrayResult();
     }
+
+    public function getQuantityStores()
+    {
+        $qb = $this->createQueryBuilder('s');
+        $qb->select('count(s.id) as quantity');
+        $qb ->where($qb->expr()->eq('s.regStatus', DefaultEntityRegStatus::ACTIVE));
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    public function storesWithoutRegister()
+    {
+        $qb = $this->createQueryBuilder('s');
+        $qb->select('count(DISTINCT s.id) as quantity', 'ie.id as inventoryId');
+
+        $qb->leftJoin(InventoryEvidence::class, 'ie', Expr\Join::WITH, 's.id = ie.store');
+        $qb->where("ie.id IS NULL");
+        $qb->andWhere($qb->expr()->eq('s.regStatus', DefaultEntityRegStatus::ACTIVE));
+
+        $result = $qb->getQuery()->getArrayResult();
+        return $result[0]['quantity'];
+    }
+
+    public function storesWithAtLeastOneRecord()
+    {
+        $qb = $this->createQueryBuilder('s');
+        $qb->select('count(DISTINCT s.id) as quantity', 'ie.id as inventoryId');
+
+        $qb->leftJoin(InventoryEvidence::class, 'ie', Expr\Join::WITH, 's.id = ie.store');
+        $qb->where("ie.id IS NOT NULL");
+        $qb->andWhere($qb->expr()->eq('s.regStatus', DefaultEntityRegStatus::ACTIVE));
+
+        $result = $qb->getQuery()->getArrayResult();
+
+        return $result[0]['quantity'];
+    }
 }
