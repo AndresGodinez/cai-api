@@ -50,15 +50,14 @@ class GetPhotoZipApiView
         $data = $repo -> getInfoPhotosToZip($params);
 
         $orderElements = [];
+        $infoPath = BASE_DIR.'/storage/inventory-evidence-photos';
         foreach ($data as $item) {
-            $infoPath = BASE_DIR.'storage/inventory-evidence-photos';
-
             $element = [
-                'inventoryId' => $item['inventoryId'],
                 'filePath' => $infoPath.$item['filePath'],
             ];
             \array_push($orderElements, $element);
         }
+
         $zip = new ZipArchive();
         $filename = 'DownloadPhotos.zip';
         if($zip->open($filename,ZIPARCHIVE::CREATE)===true) {
