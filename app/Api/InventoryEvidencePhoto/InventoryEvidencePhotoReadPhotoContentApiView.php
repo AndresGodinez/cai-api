@@ -54,7 +54,6 @@ class InventoryEvidencePhotoReadPhotoContentApiView
      * @param ServerRequestInterface $request
      * @param array $args
      * @return ResponseInterface
-     * @throws \App\Exceptions\InternalException
      * @throws \League\Flysystem\FileNotFoundException
      */
     public function __invoke(ServerRequestInterface $request, array $args) : ResponseInterface

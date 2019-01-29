@@ -242,12 +242,11 @@ class InventoryEvidenceRepository extends EntityRepository
             $endDate = $params['endDate'];
         }
         $start = $params['start'] ?? 0;
-        $limit = $params['limit'] ?? 10;
+        $limit = $params['limit'] ?? 20;
         if (isset($startDate) && isset($endDate)){
             $qb = $this->createQueryBuilder('ie');
             $qb->select(
-                'ie',
-                'COUNT(ie.id) as inventoryQuantity',
+                'iep.id as inventoryEvidencePhotos',
                 'ie.id as inventoryId',
                 'ie.code as inventoryCode',
                 'ie.regCreatedDt as captureDate',
@@ -272,15 +271,17 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->leftJoin(Clerk::class, 'c', Expr\Join::WITH, 'c.id = ie.clerk');
             $qb->leftJoin(ChainStore::class, 'cs', Expr\Join::WITH, 'cs.id = s.chainStore');
             $qb->leftJoin(User::class, 'u', Expr\Join::WITH, 'u.id = ie.user');
+            $qb->leftJoin(InventoryEvidencePhoto::class, 'iep', Expr\Join::WITH, 'iep.inventoryEvidence = ie.id');
             $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
             $qb->andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
             $qb->setFirstResult($start);
             $qb->setMaxResults($limit);
+
             return $qb->getQuery()->getArrayResult();
         }else{
             $qb = $this->createQueryBuilder('ie');
             $qb->select(
-                'ie',
+                'iep.id as inventoryEvidencePhotos',
                 'ie.id as inventoryId',
                 'ie.code as inventoryCode',
                 'ie.regCreatedDt as captureDate',
@@ -305,9 +306,11 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->leftJoin(Clerk::class, 'c', Expr\Join::WITH, 'c.id = ie.clerk');
             $qb->leftJoin(ChainStore::class, 'cs', Expr\Join::WITH, 'cs.id = s.chainStore');
             $qb->leftJoin(User::class, 'u', Expr\Join::WITH, 'u.id = ie.user');
+            $qb->leftJoin(InventoryEvidencePhoto::class, 'iep', Expr\Join::WITH, 'iep.inventoryEvidence = ie.id');
             $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
             $qb->setFirstResult($start);
             $qb->setMaxResults($limit);
+
             return $qb->getQuery()->getArrayResult();
         }
     }

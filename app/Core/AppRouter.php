@@ -74,6 +74,20 @@ class AppRouter
         })
             -> setName('api-test');
 
+
+        $route->get('/api/version', function () use ($config): ResponseInterface {
+            /** @var ResponseInterface $response */
+            $response = ResponseFactory ::buildBasicJsonResponse();
+
+            $version = $config["APP_VERSION"] ?? '';
+            $response -> getBody() -> write(\json_encode([
+                "version" => $version,
+            ]));
+
+            return $response;
+        })
+            -> setName('api-test');
+
         $route->post('/api/auth', AuthApiView::class)->setName('auth-route');
 
         $r = $route->POST('/api/photo-upload-size-test', PhotoUploadSizeTestApiView::class);

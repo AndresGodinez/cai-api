@@ -50,33 +50,54 @@ class GetPhotosInventoryApiView
 
         $data = $repo -> getAllReportsPhotos($params);
 
-        $orderElements = [];
+        $uniqueRegisterInventory = [];
+
         foreach ($data as $item) {
-            if ($item['inventoryComment'] === 'undefined' || $item['inventoryComment'] === 'null')
-                $item['inventoryComment'] = "Sin comentarios";
-            $element = [
-                'inventoryId' => $item['inventoryId'],
-                'inventoryCode' => $item['inventoryCode'],
-                'clerk_name' => $item['clerk_name'],
-                'clerkCode' => $item['clerkCode'],
-                'captureDate' => $item['captureDate'] -> format('Y-m-d H:i:s'),
-                'cityName' => $item['cityName'],
-                'storePostalCode' => $item['storePostalCode'],
-                'storeType' => $item['storeType'],
-                'storeName' => $item['storeName'],
-                'storeSapCode' => $item['storeSapCode'],
-                'storeAddress' => $item['storeAddress'],
-                'brandId' => $item['brandId'],
-                'brandName' => $item['brandName'],
-                'chainStore' => $item['chainStore'],
-                'furniture_name' => $item['furniture_name'],
-                'inventoryComment' => $item['inventoryComment'],
-                'storeId' => $item['storeId'],
-            ];
-            array_push($orderElements, $element);
+            \array_push($uniqueRegisterInventory, $item['inventoryId']);
         }
+        $uniqueRegisterInventory = \array_values(array_unique($uniqueRegisterInventory));
+        $elements = [];
+
+        foreach ($uniqueRegisterInventory as $inventoryId ) {
+            $group = \array_filter($data, function ($item) use ($inventoryId){
+                return $item['inventoryId'] === $inventoryId;
+            });
+            \array_push($elements, $group);
+        }
+
+        $orderElement = [];
+        foreach ($elements as $element) {
+            $keys = \array_keys($element);
+
+            $firstElement = $element[$keys[0]];
+            $secondElement = $element[$keys[1]];
+
+            \array_push($orderElement, [
+                'inventoryEvidencePhotos1' => $firstElement['inventoryEvidencePhotos'],
+                'inventoryEvidencePhotos2' => $secondElement['inventoryEvidencePhotos'],
+                'inventoryId' => $firstElement['inventoryId'],
+                'inventoryCode' => $firstElement['inventoryCode'],
+                'clerk_name' => $firstElement['clerk_name'],
+                'clerkCode' => $firstElement['clerkCode'],
+                'captureDate' => date_format($firstElement['captureDate'], "Y:m:d H:i:s"),
+                'cityName' => $firstElement['cityName'],
+                'storePostalCode' => $firstElement['storePostalCode'],
+                'storeType' => $firstElement['storeType'],
+                'storeName' => $firstElement['storeName'],
+                'storeSapCode' => $firstElement['storeSapCode'],
+                'storeAddress' => $firstElement['storeAddress'],
+                'brandId' => $firstElement['brandId'],
+                'brandName' => $firstElement['brandName'],
+                'chainStore' => $firstElement['chainStore'],
+                'furniture_name' => $firstElement['furniture_name'],
+                'inventoryComment' => $firstElement['inventoryComment'],
+                'storeId' => $firstElement['storeId']
+            ]);
+
+        }
+
         $response = ResponseFactory::buildBasicJsonResponse();
-        $response->getBody()->write(\json_encode($orderElements));
+        $response->getBody()->write(\json_encode($orderElement));
 
         return $response;
     }
