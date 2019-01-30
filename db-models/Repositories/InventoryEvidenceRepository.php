@@ -241,6 +241,11 @@ class InventoryEvidenceRepository extends EntityRepository
         if (isset($params['endDate'])){
             $endDate = $params['endDate'];
         }
+
+        $clerkName = '';
+        if (isset($params['clerkName']) && $params['clerkName'] !== ''){
+            $clerkName = $params['clerkName'];
+        }
         $start = $params['start'] ?? 0;
         $limit = $params['limit'] ?? 20;
         if (isset($startDate) && isset($endDate)){
@@ -253,7 +258,7 @@ class InventoryEvidenceRepository extends EntityRepository
                 'ie.comments as inventoryComment',
                 's.id as storeId',
                 's.name as storeName',
-                's.sapCode as storeSaoCode',
+                's.sapCode as storeSapCode',
                 's.address as storeAddress',
                 's.type as storeType',
                 's.cityName as cityName',
@@ -274,6 +279,11 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->leftJoin(InventoryEvidencePhoto::class, 'iep', Expr\Join::WITH, 'iep.inventoryEvidence = ie.id');
             $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
             $qb->andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
+
+            if ($clerkName !== ''){
+                $qb->where("c.name like '%". $clerkName ."%'");
+            }
+
             $qb->setFirstResult($start);
             $qb->setMaxResults($limit);
 
