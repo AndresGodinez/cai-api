@@ -183,13 +183,24 @@ class InventoryEvidenceRepository extends EntityRepository
         if (isset($params['endDate'])){
             $endDate = $params['endDate'];
         }
+        $clerkName = '';
+
+        if (isset($params['clerkName']) && $params['clerkName'] !== ''){
+            $clerkName = $params['clerkName'];
+        }
+
         $qb = $this->createQueryBuilder('ie');
         $qb->select(
             'COUNT(ie.id) as inventoryQuantity'
 
         );
+        $qb->leftJoin(Clerk::class, 'c', Expr\Join::WITH, 'c.id = ie.clerk');
         $qb->where($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
         $qb->andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
+
+        if ($clerkName !== ''){
+            $qb->where("c.name like '%". $clerkName ."%'");
+        }
 
         $result = $qb->getQuery()->getArrayResult();
         return $result[0]['inventoryQuantity'];
@@ -318,6 +329,11 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->leftJoin(User::class, 'u', Expr\Join::WITH, 'u.id = ie.user');
             $qb->leftJoin(InventoryEvidencePhoto::class, 'iep', Expr\Join::WITH, 'iep.inventoryEvidence = ie.id');
             $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
+
+            if ($clerkName !== ''){
+                $qb->where("c.name like '%". $clerkName ."%'");
+            }
+
             $qb->setFirstResult($start);
             $qb->setMaxResults($limit);
 
