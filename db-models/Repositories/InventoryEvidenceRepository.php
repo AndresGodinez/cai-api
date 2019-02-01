@@ -196,10 +196,13 @@ class InventoryEvidenceRepository extends EntityRepository
         );
         $qb->leftJoin(Clerk::class, 'c', Expr\Join::WITH, 'c.id = ie.clerk');
         $qb->where($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
-        $qb->andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
+
+        if (isset($startDate) && isset($endDate) && $startDate !== "Invalid Date" && $endDate !== "Invalid Date" ) {
+            $qb -> andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
+        }
 
         if ($clerkName !== ''){
-            $qb->where("c.name like '%". $clerkName ."%'");
+            $qb->andWhere("c.name like '%". $clerkName ."%'");
         }
 
         $result = $qb->getQuery()->getArrayResult();
