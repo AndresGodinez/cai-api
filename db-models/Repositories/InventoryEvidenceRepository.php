@@ -218,6 +218,7 @@ class InventoryEvidenceRepository extends EntityRepository
         if (isset($params['endDate'])){
             $endDate = $params['endDate'];
         }
+        $clerkName = '';
 
         if (isset($startDate) && isset($endDate)){
             $qb = $this->createQueryBuilder('ie');
@@ -230,6 +231,10 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->leftJoin(InventoryEvidencePhoto::class, 'iep', Expr\Join::WITH, 'iep.id = ie.id');
             $qb->where($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
             $qb->andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
+
+            if ($clerkName !== ''){
+                $qb->andWhere("c.name like '%". $clerkName ."%'");
+            }
 
             return $qb->getQuery()->getArrayResult();
         }else{
@@ -295,7 +300,7 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->andWhere("ie.regCreatedDt BETWEEN $startDate AND $endDate");
 
             if ($clerkName !== ''){
-                $qb->where("c.name like '%". $clerkName ."%'");
+                $qb->andWhere("c.name like '%". $clerkName ."%'");
             }
 
             $qb->setFirstResult($start);
@@ -334,7 +339,7 @@ class InventoryEvidenceRepository extends EntityRepository
             $qb->andWhere($qb->expr()->eq('ie.regStatus', DefaultEntityRegStatus::ACTIVE));
 
             if ($clerkName !== ''){
-                $qb->where("c.name like '%". $clerkName ."%'");
+                $qb->andWhere("c.name like '%". $clerkName ."%'");
             }
 
             $qb->setFirstResult($start);
